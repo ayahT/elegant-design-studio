@@ -123,7 +123,7 @@ function Hero() {
             <span className="h-px w-10 bg-cocoa/30" />
             An independent studio for brand & web
           </div>
-          <h1 className="font-serif text-[56px] leading-[1.02] tracking-[-0.01em] text-cocoa-deep md:text-[104px] lg:text-[128px]">
+          <h1 className="font-serif text-[40px] leading-[1.05] tracking-[-0.01em] text-cocoa-deep md:text-[72px] lg:text-[88px]">
             Design that
             <br />
             <span className="italic font-normal">outlives</span>
