@@ -60,8 +60,8 @@ function Nav() {
     <header className="sticky top-0 z-40 border-b border-cocoa/10 bg-parchment/85 backdrop-blur-md">
       <div className="mx-auto flex max-w-[1360px] items-center justify-between px-8 py-6 md:px-16">
         <a href="#top" className="flex items-center gap-3">
-          <img src={logo.url} alt="Kemet Wsr" className="h-7 w-7 object-contain" />
-          <span className="font-serif text-[19px] tracking-wide text-cocoa-deep">
+          <img src={logo.url} alt="Kemet Wsr" className="h-10 w-10 object-contain" />
+          <span className="font-serif text-[22px] tracking-wide text-cocoa-deep">
             Kemet Wsr
           </span>
         </a>
