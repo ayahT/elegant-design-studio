@@ -3,13 +3,13 @@ import { useState, type FormEvent } from "react";
 import { ArrowUpRight, Menu, X } from "lucide-react";
 
 import logo from "@/assets/logo-mark.png.asset.json";
-import lamborghini from "@/assets/lamborghini.png.asset.json";
-import cowboy from "@/assets/cowboy.png.asset.json";
-import nexo from "@/assets/nexo.png.asset.json";
-import nova from "@/assets/nova.png.asset.json";
-import davies from "@/assets/davies.png.asset.json";
-import carcaring from "@/assets/carcaring.png.asset.json";
-import bloom from "@/assets/bloom.png.asset.json";
+import lamborghini from "@/assets/proj-1.png.asset.json";
+import cowboy from "@/assets/proj-2.png.asset.json";
+import nexo from "@/assets/proj-3.png.asset.json";
+import nova from "@/assets/proj-7.png.asset.json";
+import davies from "@/assets/proj-4.png.asset.json";
+import carcaring from "@/assets/proj-5.png.asset.json";
+import bloom from "@/assets/proj-6.png.asset.json";
 
 export const Route = createFileRoute("/")({
   component: Home,
