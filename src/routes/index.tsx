@@ -121,7 +121,7 @@ function Hero() {
         <div className="col-span-12 md:col-span-8">
           <div className={`mb-10 flex items-center gap-4 ${eyebrow}`}>
             <span className="h-px w-10 bg-cocoa/30" />
-            An independent studio for brand & web
+            For web design and development
           </div>
           <h1 className="font-serif text-[40px] leading-[1.05] tracking-[-0.01em] text-cocoa-deep md:text-[72px] lg:text-[88px]">
             Design that <span className="italic font-normal">outlives</span> the brief.
