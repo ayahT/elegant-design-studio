@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useState, type FormEvent } from "react";
 import { ArrowUpRight, Menu, X } from "lucide-react";
 
-import logo from "@/assets/logo.png.asset.json";
+import logo from "@/assets/logo-mark.png.asset.json";
 import lamborghini from "@/assets/lamborghini.png.asset.json";
 import cowboy from "@/assets/cowboy.png.asset.json";
 import nexo from "@/assets/nexo.png.asset.json";
