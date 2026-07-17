@@ -3,13 +3,13 @@ import { useState, type FormEvent } from "react";
 import { ArrowUpRight, Menu, X } from "lucide-react";
 
 import logo from "@/assets/logo-mark.png.asset.json";
-import lamborghini from "@/assets/proj-1.png.asset.json";
-import cowboy from "@/assets/proj-2.png.asset.json";
-import nexo from "@/assets/proj-3.png.asset.json";
-import nova from "@/assets/proj-7.png.asset.json";
-import davies from "@/assets/proj-4.png.asset.json";
-import carcaring from "@/assets/proj-5.png.asset.json";
-import bloom from "@/assets/proj-6.png.asset.json";
+import lamborghini from "@/assets/proj-1.png";
+import cowboy from "@/assets/proj-2.png";
+import nexo from "@/assets/proj-3.png";
+import nova from "@/assets/proj-7.png";
+import davies from "@/assets/proj-4.png";
+import carcaring from "@/assets/proj-5.png";
+import bloom from "@/assets/proj-6.png";
 
 export const Route = createFileRoute("/")({
   component: Home,
@@ -22,7 +22,7 @@ type Project = {
   year: string;
   discipline: string;
   location: string;
-  image: { url: string };
+  image: string;
 };
 
 const projects: Project[] = [
@@ -222,7 +222,7 @@ function ProjectRow({ project }: { project: Project }) {
       </div>
       <div className="col-span-12 md:col-span-7 bg-ivory overflow-hidden">
         <img
-          src={project.image.url}
+          src={project.image}
           alt={project.name}
           loading="lazy"
           className="h-full w-full object-cover transition-transform duration-[1200ms] ease-out group-hover:scale-[1.02]"
