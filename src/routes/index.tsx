@@ -42,9 +42,14 @@ const services = [
   { n: "04", title: "Art Direction",    body: "Photography, typography and campaign direction." },
 ];
 
-/* Utility classes we'll reuse */
-const eyebrow = "text-[10.5px] uppercase tracking-[0.32em] text-cocoa/55";
-const eyebrowInk = "text-[10.5px] uppercase tracking-[0.32em] text-cocoa-deep";
+/* Utility classes — technical archive */
+const mono = "font-mono text-[10px] uppercase tracking-[0.18em]";
+const monoTiny = "font-mono text-[9px] uppercase tracking-[0.18em]";
+const label = `${mono} text-cocoa/60`;
+const labelInk = `${mono} text-cocoa-deep`;
+const frameBorder = "border border-cocoa-deep/25";
+const divide = "divide-cocoa-deep/25";
+const bd = "border-cocoa-deep/25";
 
 /* ---------------- Nav ---------------- */
 
