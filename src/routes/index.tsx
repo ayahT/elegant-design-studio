@@ -124,11 +124,7 @@ function Hero() {
             An independent studio for brand & web
           </div>
           <h1 className="font-serif text-[40px] leading-[1.05] tracking-[-0.01em] text-cocoa-deep md:text-[72px] lg:text-[88px]">
-            Design that
-            <br />
-            <span className="italic font-normal">outlives</span>
-            <br />
-            the brief.
+            Design that <span className="italic font-normal">outlives</span> the brief.
           </h1>
         </div>
 
