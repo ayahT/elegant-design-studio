@@ -61,7 +61,7 @@ function Nav() {
       <a href="#top" className={`flex flex-1 items-center gap-2.5 border-r ${bd} px-5 py-4`}>
         <img src={logo.url} alt="Kemet Wsr" className="h-5 w-5 object-contain" />
         <span className="font-bold italic tracking-[0.18em]">Kemet Wsr</span>
-        <span className="ml-2 text-cocoa/50 hidden sm:inline">MK. I</span>
+        <span className="ml-2 text-cocoa/50 hidden sm:inline">A2E</span>
       </a>
       <nav className={`hidden md:flex border-r ${bd}`}>
         {links.map((l) => (
