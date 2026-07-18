@@ -13,13 +13,11 @@ export const Route = createFileRoute("/")({
 
 type Project = SiteProject;
 
-/* Technical archive utility classes */
 const mono     = "font-mono text-[10px] uppercase tracking-[0.18em]";
 const monoTiny = "font-mono text-[9px] uppercase tracking-[0.18em]";
 const bd       = "border-cocoa-deep/25";
 
-/* ---------------- Nav ---------------- */
-function Nav() {
+function Nav({ site }: { site: SiteContent }) {
   const [open, setOpen] = useState(false);
   const links = [
     { href: "#work",     label: "Work"     },
@@ -30,9 +28,9 @@ function Nav() {
   return (
     <header className={`flex border-b ${bd} ${mono} text-cocoa-deep`}>
       <a href="#top" className={`flex flex-1 items-center gap-2.5 border-r ${bd} px-5 py-4`}>
-        <img src={logo.url} alt="Kemet Wsr" className="h-5 w-5 object-contain" />
-        <span className="font-bold italic tracking-[0.18em]">Kemet Wsr</span>
-        <span className="ml-2 text-cocoa/50 hidden sm:inline">A2E</span>
+        <img src={site.brand.logoUrl} alt={site.brand.name} className="h-5 w-5 object-contain" />
+        <span className="font-bold italic tracking-[0.18em]">{site.brand.name}</span>
+        <span className="ml-2 text-cocoa/50 hidden sm:inline">{site.brand.short}</span>
       </a>
       <nav className={`hidden md:flex border-r ${bd}`}>
         {links.map((l) => (
@@ -46,7 +44,7 @@ function Nav() {
           <span className="absolute inline-flex h-full w-full rounded-full bg-cocoa-deep opacity-60 animate-ping" />
           <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-cocoa-deep" />
         </span>
-        <span>Available</span>
+        <span>{site.availability}</span>
       </div>
       <button className={`md:hidden px-5 py-4 border-l ${bd}`} onClick={() => setOpen(!open)} aria-label="Toggle menu">
         {open ? <X className="h-4 w-4" /> : <Menu className="h-4 w-4" />}
@@ -64,49 +62,40 @@ function Nav() {
   );
 }
 
-/* ---------------- Hero ---------------- */
-function Hero() {
+function Hero({ site }: { site: SiteContent }) {
   return (
     <section id="top" className="grid grid-cols-1 md:grid-cols-2">
-      {/* Left: narrative + specs */}
       <div className={`flex flex-col gap-8 border-b md:border-b-0 md:border-r ${bd} p-8 md:p-14`}>
-        <span className={`${mono} text-cocoa/70`}>Independent Design Studio</span>
+        <span className={`${mono} text-cocoa/70`}>{site.hero.eyebrow}</span>
         <h1 className="font-serif text-[38px] md:text-[68px] leading-[0.95] tracking-[-0.01em] text-cocoa-deep">
-          we builds the future of your online presence.
+          {site.hero.headline}
         </h1>
         <p className="max-w-md text-[15px] leading-[1.75] text-cocoa/80">
-          Kemet Wsr is a small studio for founders who want their identity and product to feel considered, permanent, and unmistakably theirs.
+          {site.hero.description}
         </p>
-
-        {/* Spec Grid */}
         <div className={`grid grid-cols-2 lg:grid-cols-3 border ${bd} bg-ivory`}>
-          <SpecCell label="Region"  value="Alexandria · Remote" />
-          <SpecCell label="Founded" value="2025" />
-          <SpecCell label="Focus"   value="UI/UX · Web" last />
+          {site.hero.specs.map((s, i) => (
+            <SpecCell key={s.label + i} label={s.label} value={s.value} last={i === site.hero.specs.length - 1} />
+          ))}
         </div>
-
         <div className="flex flex-wrap gap-4">
           <a href="#work" className={`px-6 py-3 bg-cocoa-deep text-ivory ${mono} font-bold hover:opacity-90 transition-opacity`}>
-            View Selected Work
+            {site.hero.ctaPrimary}
           </a>
           <a href="#contact" className={`px-6 py-3 border ${bd} ${mono} font-bold hover:bg-ivory transition-colors inline-flex items-center gap-2`}>
-            Contact us <ArrowUpRight className="h-3.5 w-3.5" />
+            {site.hero.ctaSecondary} <ArrowUpRight className="h-3.5 w-3.5" />
           </a>
         </div>
       </div>
-
-      {/* Right: featured project panel */}
       <div className="relative bg-ivory p-8 md:p-14 flex flex-col items-center justify-center min-h-[420px] md:min-h-0">
         <div className={`absolute top-6 left-6 ${mono} text-cocoa/55`}>
-          Featured — Ancient Egypt AI
+          {site.hero.featuredLabel}
         </div>
-
         <img
-          src={aiChat.url}
-          alt="Ancient Egypt AI chat app mockup"
+          src={site.hero.featuredImageUrl}
+          alt={site.hero.featuredAlt}
           className="w-full max-w-[420px] h-auto object-contain"
         />
-
         <div className={`absolute top-[28%] right-6 ${monoTiny} border-l ${bd} pl-2 text-cocoa-deep`}>
           <span className="block font-bold">Product</span>
           <span className="opacity-60">Mobile · AI</span>
@@ -115,7 +104,6 @@ function Hero() {
           <span className="block font-bold">Interface</span>
           <span className="opacity-60">Chat · History</span>
         </div>
-
       </div>
     </section>
   );
@@ -130,8 +118,7 @@ function SpecCell({ label, value, last }: { label: string; value: string; last?:
   );
 }
 
-/* ---------------- Work ---------------- */
-function Work() {
+function Work({ site }: { site: SiteContent }) {
   return (
     <section id="work" className={`border-t ${bd}`}>
       <div className={`grid grid-cols-12 border-b ${bd}`}>
@@ -140,16 +127,15 @@ function Work() {
         </div>
         <div className="col-span-12 md:col-span-6 p-6 md:p-8">
           <h2 className="font-serif text-[28px] md:text-[40px] leading-[1.05] text-cocoa-deep">
-            Eight finished projects <span className="italic">since the beginning of 2026.</span>
+            {site.work.heading} <span className="italic">{site.work.italic}</span>
           </h2>
         </div>
         <div className={`col-span-12 md:col-span-3 border-l ${bd} p-6 flex items-end justify-end ${mono} text-cocoa/60`}>
-          08 / 08 units
+          {site.work.count}
         </div>
       </div>
-
-      <WorkGroup label="Design" projects={designProjects} />
-      <WorkGroup label="Development" projects={developmentProjects} />
+      <WorkGroup label="Design" projects={site.designProjects} />
+      <WorkGroup label="Development" projects={site.developmentProjects} />
     </section>
   );
 }
@@ -164,8 +150,8 @@ function WorkGroup({ label, projects }: { label: string; projects: Project[] }) 
         <span className="ml-auto text-cocoa/55">{count} / {count} units</span>
       </div>
       <ol className={`divide-y ${bd.replace("border-", "divide-")}`}>
-        {projects.map((p) => (
-          <ProjectRow key={p.name} project={p} group={label} />
+        {projects.map((p, i) => (
+          <ProjectRow key={p.name + i} project={p} group={label} />
         ))}
       </ol>
     </div>
@@ -214,8 +200,7 @@ function ProjectRow({ project, group }: { project: Project; group: string }) {
   );
 }
 
-/* ---------------- Services ---------------- */
-function Services() {
+function Services({ site }: { site: SiteContent }) {
   return (
     <section id="services" className={`border-t ${bd} bg-ivory`}>
       <div className={`grid grid-cols-12 border-b ${bd}`}>
@@ -228,12 +213,11 @@ function Services() {
           </h2>
         </div>
         <div className={`col-span-12 md:col-span-3 border-l ${bd} p-6 flex items-end justify-end ${mono} text-cocoa/60`}>
-          02 disciplines
+          {`${site.services.length}`.padStart(2, "0")} disciplines
         </div>
       </div>
-
       <ol className={`divide-y ${bd.replace("border-", "divide-")}`}>
-        {services.map((s) => (
+        {site.services.map((s) => (
           <li key={s.title} className="group grid grid-cols-12 items-center hover:bg-parchment/60 transition-colors">
             <div className={`col-span-2 md:col-span-1 border-r ${bd} p-6 ${mono} text-cocoa/55`}>
               {s.n}
@@ -254,24 +238,21 @@ function Services() {
   );
 }
 
-/* ---------------- About / Designer's note ---------------- */
-function About() {
+function About({ site }: { site: SiteContent }) {
   return (
     <section id="about" className={`border-t ${bd} flex flex-col lg:flex-row`}>
       <div className={`flex-1 p-8 md:p-14 border-b lg:border-b-0 lg:border-r ${bd}`}>
         <h4 className={`${mono} text-cocoa-deep border-b ${bd} pb-3 mb-6 w-fit`}>Studio Note</h4>
         <p className="font-serif italic text-[18px] md:text-[22px] leading-[1.55] text-cocoa-deep/85 max-w-xl">
-          Named for the oldest builders — those who understood proportion, patience, and permanence. We take on a small number of projects each year so every one gets the depth it deserves. We aren't chasing trends. We're building work that still reads clearly in ten years.
+          {site.about.note}
         </p>
       </div>
       <div className="lg:w-[420px] bg-ivory flex flex-col">
         <table className={`w-full ${monoTiny} text-cocoa-deep flex-1 flex flex-col`}>
           <tbody className="flex flex-col flex-1">
-            <LedgerRow k="Stage"        v="Early Revenue" />
-            <LedgerRow k="Practice"     v="UI/UX · Web" />
-            <LedgerRow k="Founded"      v="2025 Alexandria" />
-            <LedgerRow k="Selected"     v="8 projects" />
-            <LedgerRow k="Availability" v="all the time" last />
+            {site.about.ledger.map((r, i) => (
+              <LedgerRow key={r.k + i} k={r.k} v={r.v} last={i === site.about.ledger.length - 1} />
+            ))}
           </tbody>
         </table>
       </div>
@@ -288,33 +269,42 @@ function LedgerRow({ k, v, last }: { k: string; v: string; last?: boolean }) {
   );
 }
 
-
-/* ---------------- Contact ---------------- */
-function Contact() {
-  const [sent, setSent] = useState(false);
-  function onSubmit(e: FormEvent<HTMLFormElement>) {
+function Contact({ site }: { site: SiteContent }) {
+  const [state, setState] = useState<"idle" | "sending" | "sent" | "error">("idle");
+  const sendMessage = useServerFn(submitMessage);
+  async function onSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    const data = new FormData(e.currentTarget);
-    const subject = encodeURIComponent(`New project inquiry — ${data.get("name") || "friend"}`);
-    const body = encodeURIComponent(String(data.get("message") || ""));
-    window.location.href = `mailto:kemetwsr@gmail.com?subject=${subject}&body=${body}`;
-    setSent(true);
+    const form = e.currentTarget;
+    const data = new FormData(form);
+    setState("sending");
+    try {
+      await sendMessage({
+        data: {
+          name: String(data.get("name") ?? ""),
+          email: String(data.get("email") ?? ""),
+          message: String(data.get("message") ?? ""),
+        },
+      });
+      setState("sent");
+      form.reset();
+    } catch {
+      setState("error");
+    }
   }
   return (
     <section id="contact" className={`border-t ${bd} grid grid-cols-1 md:grid-cols-2`}>
       <div className={`p-8 md:p-14 border-b md:border-b-0 md:border-r ${bd}`}>
         <span className={`${mono} text-cocoa/60`}>Fig. 04 — Enquire</span>
         <h2 className="mt-6 font-serif text-[44px] md:text-[72px] leading-[0.98] text-cocoa-deep">
-          Let's build <span className="italic">something lasting.</span>
+          {site.contact.heading} <span className="italic">{site.contact.italic}</span>
         </h2>
         <p className="mt-8 max-w-md text-[15px] leading-[1.75] text-cocoa/75">
-          Tell us a little about your project. We reply to every serious enquiry within two business days.
+          {site.contact.body}
         </p>
-        <a href="mailto:kemetwsr@gmail.com" className="mt-10 inline-block font-serif italic text-[24px] md:text-[30px] text-cocoa-deep underline decoration-cocoa/30 underline-offset-[8px] hover:decoration-cocoa-deep">
-          kemetwsr@gmail.com
+        <a href={`mailto:${site.contact.email}`} className="mt-10 inline-block font-serif italic text-[24px] md:text-[30px] text-cocoa-deep underline decoration-cocoa/30 underline-offset-[8px] hover:decoration-cocoa-deep">
+          {site.contact.email}
         </a>
       </div>
-
       <form onSubmit={onSubmit} className={`bg-ivory p-8 md:p-14 flex flex-col gap-8`}>
         <Field name="name"  label="Name"  placeholder="Your name" />
         <Field name="email" label="Email" type="email" placeholder="you@studio.com" />
@@ -330,9 +320,10 @@ function Contact() {
         </div>
         <button
           type="submit"
-          className={`inline-flex items-center justify-between px-6 py-4 bg-cocoa-deep text-ivory ${mono} font-bold hover:opacity-90 transition-opacity`}
+          disabled={state === "sending"}
+          className={`inline-flex items-center justify-between px-6 py-4 bg-cocoa-deep text-ivory ${mono} font-bold hover:opacity-90 transition-opacity disabled:opacity-60`}
         >
-          {sent ? "Opening your mail…" : "send a message"}
+          {state === "sending" ? "Sending…" : state === "sent" ? "Message sent — thank you" : state === "error" ? "Something went wrong — retry" : site.contact.submitLabel}
           <ArrowUpRight className="h-4 w-4" />
         </button>
       </form>
@@ -355,41 +346,55 @@ function Field({ name, label, type = "text", placeholder }: { name: string; labe
   );
 }
 
-/* ---------------- Footer ---------------- */
-function Footer() {
+function Footer({ site }: { site: SiteContent }) {
   return (
     <footer className={`border-t ${bd} grid grid-cols-12 ${mono} text-cocoa-deep`}>
       <div className={`col-span-12 md:col-span-5 border-r ${bd} p-6 flex items-center gap-3`}>
-        <img src={logo.url} alt="" className="h-5 w-5 object-contain" />
-        <span className="font-bold italic tracking-[0.18em]">Kemet Wsr</span>
+        <img src={site.brand.logoUrl} alt="" className="h-5 w-5 object-contain" />
+        <span className="font-bold italic tracking-[0.18em]">{site.brand.name}</span>
       </div>
       <div className={`col-span-6 md:col-span-3 border-r ${bd} p-6`}>
-        Handcrafted in the studio
+        {site.footer.tagline}
       </div>
       <div className={`col-span-6 md:col-span-2 border-r ${bd} p-6 flex gap-4 text-cocoa/70`}>
-        <a href="https://www.instagram.com/kemet.wsr/?fbclid=IwY2xjawTI1EdleHRuA2FlbQIxMQBicmlkETExSmtjQUNqSGdkNmxMZVNDc3J0YwZhcHBfaWQBMAABHhd8L0ZApbKsKTDvCHbPJIkWIjcwqs-CaeXz9ph0QG-IGf94GZAftSHG4eUP_aem_zoU_XFzIRr-qnNfc7Qu0LA" target="_blank" rel="noopener noreferrer" className="hover:text-cocoa-deep">IG</a>
-        <a href="https://www.linkedin.com/company/kemet-wsr/" target="_blank" rel="noopener noreferrer" className="hover:text-cocoa-deep">LI</a>
+        <a href={site.footer.instagramUrl} target="_blank" rel="noopener noreferrer" className="hover:text-cocoa-deep">IG</a>
+        <a href={site.footer.linkedinUrl} target="_blank" rel="noopener noreferrer" className="hover:text-cocoa-deep">LI</a>
       </div>
-      <a href="mailto:kemetwsr@gmail.com" className="col-span-12 md:col-span-2 p-6 text-right hover:bg-ivory transition-colors">
-        kemetwsr@gmail.com →
+      <a href={`mailto:${site.contact.email}`} className="col-span-12 md:col-span-2 p-6 text-right hover:bg-ivory transition-colors">
+        {site.contact.email} →
       </a>
     </footer>
   );
 }
 
 function Home() {
+  const navigate = useNavigate();
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    const h = window.location.hash.replace(/[#/]/g, "");
+    if (h === "kemetwsr2025") navigate({ to: "/kemetwsr2025" });
+  }, [navigate]);
+
+  const load = useServerFn(getContent);
+  const { data } = useQuery({
+    queryKey: ["site-content"],
+    queryFn: () => load(),
+    staleTime: 60_000,
+  });
+  const site: SiteContent = data?.value ? mergeContent(data.value) : defaultSite;
+
   return (
     <div className="min-h-screen bg-parchment text-cocoa-deep p-3 md:p-6">
       <div className={`mx-auto max-w-[1360px] border ${bd} bg-parchment relative`}>
-        <Nav />
+        <Nav site={site} />
         <main>
-          <Hero />
-          <Work />
-          <Services />
-          <About />
-          <Contact />
+          <Hero site={site} />
+          <Work site={site} />
+          <Services site={site} />
+          <About site={site} />
+          <Contact site={site} />
         </main>
-        <Footer />
+        <Footer site={site} />
       </div>
     </div>
   );
