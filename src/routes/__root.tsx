@@ -89,7 +89,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       {
         property: "og:description",
         content:
-          "An independent studio crafting elegant brands and websites built to last.",
+          "KEMET WSR is an independent studio crafting elegant brands and websites built to last — from hypercar launches to AI platforms and artisan e-commerce.",
       },
       { property: "og:type", content: "website" },
       { property: "og:site_name", content: "KEMET WSR" },
@@ -98,15 +98,17 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       {
         name: "twitter:description",
         content:
-          "An independent studio crafting elegant brands and websites built to last.",
+          "KEMET WSR is an independent studio crafting elegant brands and websites built to last — from hypercar launches to AI platforms and artisan e-commerce.",
       },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/a523af0a-563f-4557-987f-eff4e5e25b02/id-preview-366b04c0--5e32cb57-069f-4124-87cd-95d4ffcdd8fd.lovable.app-1784406896797.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/a523af0a-563f-4557-987f-eff4e5e25b02/id-preview-366b04c0--5e32cb57-069f-4124-87cd-95d4ffcdd8fd.lovable.app-1784406896797.png" },
     ],
     links: [
       {
         rel: "stylesheet",
         href: appCss,
       },
-      { rel: "icon", href: logoMarkAsset.url, type: "image/png" },
+      { rel: "icon", href: "/__l5e/assets-v1/325f96c6-0cae-4779-bf3e-e61dcf454e8c/logo-mark.png", type: "image/png" },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       {
         rel: "preconnect",
