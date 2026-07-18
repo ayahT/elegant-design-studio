@@ -262,7 +262,7 @@ function Services() {
           </h2>
         </div>
         <div className={`col-span-12 md:col-span-3 border-l ${bd} p-6 flex items-end justify-end ${mono} text-cocoa/60`}>
-          04 disciplines
+          02 disciplines
         </div>
       </div>
 
