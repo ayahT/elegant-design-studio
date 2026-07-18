@@ -47,6 +47,8 @@ export type SiteContent = {
     body: string;
     email: string;
     submitLabel: string;
+    bookingUrl: string;
+    bookingLabel: string;
   };
   footer: {
     tagline: string;
@@ -112,6 +114,8 @@ export const defaultSite: SiteContent = {
     body: "Tell us a little about your project. We reply to every serious enquiry within two business days.",
     email: "kemetwsr@gmail.com",
     submitLabel: "send a message",
+    bookingUrl: "https://cal.com/kemetwsr-qc6vjw",
+    bookingLabel: "Book a 30-min call",
   },
   footer: {
     tagline: "Handcrafted in the studio",
