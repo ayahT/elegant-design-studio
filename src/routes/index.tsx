@@ -210,14 +210,15 @@ function WorkGroup({ label, projects }: { label: string; projects: Project[] }) 
       </div>
       <ol className={`divide-y ${bd.replace("border-", "divide-")}`}>
         {projects.map((p) => (
-          <ProjectRow key={p.name} project={p} />
+          <ProjectRow key={p.name} project={p} group={label} />
         ))}
       </ol>
     </div>
   );
 }
 
-function ProjectRow({ project }: { project: Project }) {
+function ProjectRow({ project, group }: { project: Project; group: string }) {
+  const ctaLabel = group === "Development" ? "View website" : "View case";
   return (
     <li className="group grid grid-cols-12 items-stretch">
       <div className={`col-span-12 md:col-span-1 border-r ${bd} p-6 flex md:flex-col items-start gap-2`}>
@@ -242,7 +243,7 @@ function ProjectRow({ project }: { project: Project }) {
             rel={project.link ? "noopener noreferrer" : undefined}
             className={`inline-flex items-center gap-2 border-b ${bd} pb-1 ${mono} text-cocoa-deep hover:border-cocoa-deep`}
           >
-            View case <ArrowUpRight className="h-3.5 w-3.5" />
+            {ctaLabel} <ArrowUpRight className="h-3.5 w-3.5" />
           </a>
         </div>
       </div>
