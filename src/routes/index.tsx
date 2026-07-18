@@ -81,7 +81,7 @@ function Nav() {
           <span className="absolute inline-flex h-full w-full rounded-full bg-cocoa-deep opacity-60 animate-ping" />
           <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-cocoa-deep" />
         </span>
-        <span>Available Q3</span>
+        <span>Available</span>
       </div>
       <button className={`md:hidden px-5 py-4 border-l ${bd}`} onClick={() => setOpen(!open)} aria-label="Toggle menu">
         {open ? <X className="h-4 w-4" /> : <Menu className="h-4 w-4" />}
