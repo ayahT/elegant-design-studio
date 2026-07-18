@@ -295,12 +295,12 @@ function About() {
       <div className={`flex-1 p-8 md:p-14 border-b lg:border-b-0 lg:border-r ${bd}`}>
         <h4 className={`${mono} text-cocoa-deep border-b ${bd} pb-3 mb-6 w-fit`}>Studio Note</h4>
         <p className="font-serif italic text-[18px] md:text-[22px] leading-[1.55] text-cocoa-deep/85 max-w-xl">
-          Named for the oldest builders — the ones who worked in stone and understood proportion, patience, permanence. We take on a small number of projects each year so every one gets the depth it deserves: strategy, identity, editorial art direction, and the site to hold it all. We aren't chasing trends. We're building work that still reads clearly in ten years.
+          Named for the oldest builders — those who understood proportion, patience, and permanence. We take on a small number of projects each year so every one gets the depth it deserves. We aren't chasing trends. We're building work that still reads clearly in ten years.
         </p>
       </div>
-      <div className="lg:w-[420px] bg-ivory">
-        <table className={`w-full ${monoTiny} text-cocoa-deep`}>
-          <tbody>
+      <div className="lg:w-[420px] bg-ivory flex flex-col">
+        <table className={`w-full ${monoTiny} text-cocoa-deep flex-1 flex flex-col`}>
+          <tbody className="flex flex-col flex-1">
             <LedgerRow k="Stage"        v="Early Revenue" />
             <LedgerRow k="Practice"     v="UI/UX · Web" />
             <LedgerRow k="Founded"      v="2025 Alexandria" />
@@ -315,12 +315,13 @@ function About() {
 
 function LedgerRow({ k, v, last }: { k: string; v: string; last?: boolean }) {
   return (
-    <tr className={last ? "" : `border-b ${bd}`}>
-      <td className={`p-4 font-bold bg-parchment/50 border-r ${bd}`}>{k}</td>
-      <td className="p-4 text-right">{v}</td>
+    <tr className={`flex flex-1 items-center ${last ? "" : `border-b ${bd}`}`}>
+      <td className={`p-4 font-bold bg-parchment/50 border-r ${bd} flex-1`}>{k}</td>
+      <td className="p-4 text-right flex-1">{v}</td>
     </tr>
   );
 }
+
 
 /* ---------------- Contact ---------------- */
 function Contact() {
