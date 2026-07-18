@@ -24,12 +24,13 @@ type Project = {
   discipline: string;
   location: string;
   image: string;
+  link?: string;
 };
 
 const designProjects: Project[] = [
-  { n: "I",   name: "Ataa Platform", tagline: "A specialized platform for providing Adhiyah (sacrificial) services inside and outside Egypt, with multiple safe options tailored to users' needs.", year: "2024", discipline: "Platform · Web", location: "Cairo", image: ataa },
-  { n: "II",  name: "MOVO App",      tagline: "A mobility app helping riders navigate the city with live traffic, routing and multi-modal transport options.", year: "2024", discipline: "Product · Mobile", location: "London", image: movo },
-  { n: "III", name: "Zadna",         tagline: "A halal restaurant app designed to help Muslim communities living abroad easily find trusted, certified Islamic food.", year: "2024", discipline: "Product · Mobile", location: "Global", image: zadna },
+  { n: "I",   name: "Ataa Platform", tagline: "A specialized platform for providing Adhiyah (sacrificial) services inside and outside Egypt, with multiple safe options tailored to users' needs.", year: "2024", discipline: "Platform · Web", location: "Cairo", image: ataa, link: "https://www.behance.net/gallery/247841697/_" },
+  { n: "II",  name: "MOVO App",      tagline: "A mobility app helping riders navigate the city with live traffic, routing and multi-modal transport options.", year: "2024", discipline: "Product · Mobile", location: "London", image: movo, link: "https://www.behance.net/gallery/248654627/MOVO-App" },
+  { n: "III", name: "Zadna",         tagline: "A halal restaurant app designed to help Muslim communities living abroad easily find trusted, certified Islamic food.", year: "2024", discipline: "Product · Mobile", location: "Global", image: zadna, link: "https://www.behance.net/gallery/243174961/ZADNA" },
 ];
 
 const developmentProjects: Project[] = [
@@ -235,7 +236,12 @@ function ProjectRow({ project }: { project: Project }) {
         </div>
         <div className="flex items-center justify-between">
           <span className={`${mono} text-cocoa/55`}>{project.location}</span>
-          <a href="#contact" className={`inline-flex items-center gap-2 border-b ${bd} pb-1 ${mono} text-cocoa-deep hover:border-cocoa-deep`}>
+          <a
+            href={project.link || "#contact"}
+            target={project.link ? "_blank" : undefined}
+            rel={project.link ? "noopener noreferrer" : undefined}
+            className={`inline-flex items-center gap-2 border-b ${bd} pb-1 ${mono} text-cocoa-deep hover:border-cocoa-deep`}
+          >
             View case <ArrowUpRight className="h-3.5 w-3.5" />
           </a>
         </div>
