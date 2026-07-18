@@ -304,7 +304,7 @@ function About() {
             <LedgerRow k="Stage"        v="Early Revenue" />
             <LedgerRow k="Practice"     v="UI/UX · Web" />
             <LedgerRow k="Founded"      v="2025 Alexandria" />
-            <LedgerRow k="Selected"     v="VIII commissions" />
+            <LedgerRow k="Selected"     v="8 projects" />
             <LedgerRow k="Availability" v="94% nominal" last />
           </tbody>
         </table>
