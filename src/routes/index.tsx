@@ -5,18 +5,12 @@ import { ArrowUpRight, Menu, X } from "lucide-react";
 import logo from "@/assets/logo-mark.png.asset.json";
 import lamborghini from "@/assets/proj-1.png";
 import cowboy from "@/assets/proj-2.png";
-import nexoAsset from "@/assets/nexo-new.png.asset.json";
-import novaAsset from "@/assets/nova-new.png.asset.json";
+import nexo from "@/assets/nexo-new.png";
+import nova from "@/assets/nova-new.png";
 import davies from "@/assets/proj-4.png";
-import ataaAsset from "@/assets/ataa-new.png.asset.json";
-import movoAsset from "@/assets/movo.png.asset.json";
-import zadnaAsset from "@/assets/zadna.png.asset.json";
-
-const nexo = nexoAsset.url;
-const nova = novaAsset.url;
-const ataa = ataaAsset.url;
-const movo = movoAsset.url;
-const zadna = zadnaAsset.url;
+import ataa from "@/assets/ataa-new.png";
+import movo from "@/assets/movo.png";
+import zadna from "@/assets/zadna.png";
 
 export const Route = createFileRoute("/")({
   component: Home,
