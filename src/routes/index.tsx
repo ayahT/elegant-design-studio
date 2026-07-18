@@ -207,7 +207,11 @@ function WorkGroup({ label, projects }: { label: string; projects: Project[] }) 
         {label}
         <span className="ml-auto text-cocoa/55">{count} / {count} units</span>
       </div>
-      ...
+      <ol className={`divide-y ${bd.replace("border-", "divide-")}`}>
+        {projects.map((p) => (
+          <ProjectRow key={p.name} project={p} />
+        ))}
+      </ol>
     </div>
   );
 }
