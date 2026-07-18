@@ -367,7 +367,7 @@ function Contact() {
           type="submit"
           className={`inline-flex items-center justify-between px-6 py-4 bg-cocoa-deep text-ivory ${mono} font-bold hover:opacity-90 transition-opacity`}
         >
-          {sent ? "Opening your mail…" : "message us or send a message"}
+          {sent ? "Opening your mail…" : "send a message"}
           <ArrowUpRight className="h-4 w-4" />
         </button>
       </form>
