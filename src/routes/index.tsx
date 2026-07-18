@@ -8,9 +8,15 @@ import cowboy from "@/assets/proj-2.png";
 import nexoAsset from "@/assets/nexo-new.png.asset.json";
 import novaAsset from "@/assets/nova-new.png.asset.json";
 import davies from "@/assets/proj-4.png";
+import ataaAsset from "@/assets/ataa.png.asset.json";
+import movoAsset from "@/assets/movo.png.asset.json";
+import zadnaAsset from "@/assets/zadna.png.asset.json";
 
 const nexo = nexoAsset.url;
 const nova = novaAsset.url;
+const ataa = ataaAsset.url;
+const movo = movoAsset.url;
+const zadna = zadnaAsset.url;
 
 export const Route = createFileRoute("/")({
   component: Home,
@@ -32,6 +38,9 @@ const projects: Project[] = [
   { n: "III", name: "Nexo",                 tagline: "An autonomous customer intelligence platform turning signals into role-based action plans.", year: "2025", discipline: "Product · Web", location: "Amsterdam", image: nexo },
   { n: "IV",  name: "Cowboy",               tagline: "A connected e-bike brand for city riders — adaptive motor, built-in GPS, theft protection.", year: "2024", discipline: "Brand · E-commerce", location: "Brussels", image: cowboy },
   { n: "V",   name: "Davies",               tagline: "An independent studio crafting bold brands and modern websites for founders.", year: "2024", discipline: "Portfolio · Web", location: "London", image: davies },
+  { n: "VI",  name: "Ataa Platform",        tagline: "A specialized platform for providing Adhiyah (sacrificial) services inside and outside Egypt, with multiple safe options tailored to users' needs.", year: "2024", discipline: "Platform · Web", location: "Cairo", image: ataa },
+  { n: "VII", name: "MOVO App",             tagline: "A mobility app helping riders navigate the city with live traffic, routing and multi-modal transport options.", year: "2024", discipline: "Product · Mobile", location: "London", image: movo },
+  { n: "VIII",name: "Zadna",                tagline: "A halal restaurant app designed to help Muslim communities living abroad easily find trusted, certified Islamic food.", year: "2024", discipline: "Product · Mobile", location: "Global", image: zadna },
 ];
 
 const services = [
@@ -178,11 +187,11 @@ function Work() {
         </div>
         <div className="col-span-12 md:col-span-6 p-6 md:p-8">
           <h2 className="font-serif text-[28px] md:text-[40px] leading-[1.05] text-cocoa-deep">
-            Five commissions — <span className="italic">MMXXIV → MMXXVI.</span>
+            Eight commissions — <span className="italic">MMXXIV → MMXXVI.</span>
           </h2>
         </div>
         <div className={`col-span-12 md:col-span-3 border-l ${bd} p-6 flex items-end justify-end ${mono} text-cocoa/60`}>
-          05 / 05 units
+          08 / 08 units
         </div>
       </div>
 
@@ -287,7 +296,7 @@ function About() {
             <LedgerRow k="Stage"        v="Booking Q3 · MMXXVI" />
             <LedgerRow k="Practice"     v="Brand · Web" />
             <LedgerRow k="Founded"      v="MMXXIV / Cairo" />
-            <LedgerRow k="Selected"     v="V commissions" />
+            <LedgerRow k="Selected"     v="VIII commissions" />
             <LedgerRow k="Availability" v="94% nominal" last />
           </tbody>
         </table>
