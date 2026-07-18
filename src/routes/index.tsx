@@ -8,7 +8,7 @@ import cowboy from "@/assets/proj-2.png";
 import nexoAsset from "@/assets/nexo-new.png.asset.json";
 import novaAsset from "@/assets/nova-new.png.asset.json";
 import davies from "@/assets/proj-4.png";
-import ataaAsset from "@/assets/ataa.png.asset.json";
+import ataaAsset from "@/assets/ataa-new.png.asset.json";
 import movoAsset from "@/assets/movo.png.asset.json";
 import zadnaAsset from "@/assets/zadna.png.asset.json";
 
