@@ -3,6 +3,7 @@ import { useState, type FormEvent } from "react";
 import { ArrowUpRight, Menu, X } from "lucide-react";
 
 import logo from "@/assets/logo-mark.png.asset.json";
+import aiChat from "@/assets/ai-chat.png.asset.json";
 import lamborghini from "@/assets/proj-1.png";
 import cowboy from "@/assets/proj-2.png";
 import nexo from "@/assets/nexo-new.png";
