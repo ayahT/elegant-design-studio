@@ -43,10 +43,8 @@ const developmentProjects: Project[] = [
 ];
 
 const services = [
-  { n: "01", title: "Brand Identity",   body: "Logotypes, marks and complete visual systems." },
-  { n: "02", title: "Web Design",       body: "Editorial, considered interfaces with intent." },
-  { n: "03", title: "Web Development",  body: "Fast, modern, hand-built with care." },
-  { n: "04", title: "Art Direction",    body: "Photography, typography and campaign direction." },
+  { n: "01", title: "UI/UX",            body: "Research, wireframes and interfaces shaped around real user behavior." },
+  { n: "02", title: "Web Development",  body: "Fast, modern, hand-built sites and products with clean architecture." },
 ];
 
 /* Technical archive utility classes */
