@@ -5,11 +5,12 @@ import { ArrowUpRight, Menu, X } from "lucide-react";
 import logo from "@/assets/logo-mark.png.asset.json";
 import lamborghini from "@/assets/proj-1.png";
 import cowboy from "@/assets/proj-2.png";
-import nexo from "@/assets/proj-3.png";
-import nova from "@/assets/proj-7.png";
+import nexoAsset from "@/assets/nexo-new.png.asset.json";
+import novaAsset from "@/assets/nova-new.png.asset.json";
 import davies from "@/assets/proj-4.png";
-import carcaring from "@/assets/proj-5.png";
-import bloom from "@/assets/proj-6.png";
+
+const nexo = nexoAsset.url;
+const nova = novaAsset.url;
 
 export const Route = createFileRoute("/")({
   component: Home,
@@ -31,8 +32,6 @@ const projects: Project[] = [
   { n: "III", name: "Nexo",                 tagline: "An autonomous customer intelligence platform turning signals into role-based action plans.", year: "2025", discipline: "Product · Web", location: "Amsterdam", image: nexo },
   { n: "IV",  name: "Cowboy",               tagline: "A connected e-bike brand for city riders — adaptive motor, built-in GPS, theft protection.", year: "2024", discipline: "Brand · E-commerce", location: "Brussels", image: cowboy },
   { n: "V",   name: "Davies",               tagline: "An independent studio crafting bold brands and modern websites for founders.", year: "2024", discipline: "Portfolio · Web", location: "London", image: davies },
-  { n: "VI",  name: "CarCaring",            tagline: "A car service platform for booking certified mechanics with transparent, warranty-backed repairs.", year: "2024", discipline: "Product · Brand", location: "Paris", image: carcaring },
-  { n: "VII", name: "Bloom",                tagline: "A floral delivery service connecting customers with local artisan florists for same-day bouquets.", year: "2024", discipline: "E-commerce · Brand", location: "Munich", image: bloom },
 ];
 
 const services = [
@@ -179,11 +178,11 @@ function Work() {
         </div>
         <div className="col-span-12 md:col-span-6 p-6 md:p-8">
           <h2 className="font-serif text-[28px] md:text-[40px] leading-[1.05] text-cocoa-deep">
-            Seven commissions — <span className="italic">MMXXIV → MMXXVI.</span>
+            Five commissions — <span className="italic">MMXXIV → MMXXVI.</span>
           </h2>
         </div>
         <div className={`col-span-12 md:col-span-3 border-l ${bd} p-6 flex items-end justify-end ${mono} text-cocoa/60`}>
-          07 / 07 units
+          05 / 05 units
         </div>
       </div>
 
@@ -288,7 +287,7 @@ function About() {
             <LedgerRow k="Stage"        v="Booking Q3 · MMXXVI" />
             <LedgerRow k="Practice"     v="Brand · Web" />
             <LedgerRow k="Founded"      v="MMXXIV / Cairo" />
-            <LedgerRow k="Selected"     v="VII commissions" />
+            <LedgerRow k="Selected"     v="V commissions" />
             <LedgerRow k="Availability" v="94% nominal" last />
           </tbody>
         </table>
