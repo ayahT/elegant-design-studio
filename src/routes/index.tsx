@@ -222,12 +222,12 @@ function ProjectRow({ project }: { project: Project }) {
           </a>
         </div>
       </div>
-      <div className="col-span-12 md:col-span-7 bg-ivory overflow-hidden">
+      <div className="col-span-12 md:col-span-7 bg-ivory overflow-hidden p-6 md:p-10">
         <img
           src={project.image}
           alt={project.name}
           loading="lazy"
-          className="h-full w-full object-cover transition-transform duration-[1200ms] ease-out group-hover:scale-[1.02]"
+          className="h-full w-full object-contain transition-transform duration-[1200ms] ease-out group-hover:scale-[1.02]"
         />
       </div>
     </li>
