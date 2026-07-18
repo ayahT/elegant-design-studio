@@ -106,7 +106,7 @@ function Hero() {
       <div className={`flex flex-col gap-8 border-b md:border-b-0 md:border-r ${bd} p-8 md:p-14`}>
         <span className={`${mono} text-cocoa/70`}>Independent Design Studio / MMXXVI / Unit 01</span>
         <h1 className="font-serif text-[44px] md:text-[80px] leading-[0.95] tracking-[-0.01em] text-cocoa-deep">
-          Design that <span className="italic">outlives</span> the brief.
+          we builds the future of your online presence.
         </h1>
         <p className="max-w-md text-[15px] leading-[1.75] text-cocoa/80">
           Kemet Wsr is a small studio for founders who want their identity and product to feel considered, permanent, and unmistakably theirs.
