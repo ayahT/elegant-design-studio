@@ -1,5 +1,5 @@
-import logo from "@/assets/logo-mark.png.asset.json";
-import aiChat from "@/assets/ai-chat.png.asset.json";
+import logo from "@/assets/logo-mark.png";
+import aiChat from "@/assets/ai-chat.png";
 import lamborghini from "@/assets/proj-1.png";
 import cowboy from "@/assets/proj-2.png";
 import nexo from "@/assets/nexo-new.png";
@@ -57,7 +57,7 @@ export type SiteContent = {
 };
 
 export const defaultSite: SiteContent = {
-  brand: { name: "Kemet Wsr", short: "A2E", logoUrl: logo.url },
+  brand: { name: "Kemet Wsr", short: "A2E", logoUrl: logo },
   hero: {
     eyebrow: "Independent Design Studio",
     headline: "we builds the future of your online presence.",
@@ -71,7 +71,7 @@ export const defaultSite: SiteContent = {
     ctaPrimary: "View Selected Work",
     ctaSecondary: "Contact us",
     featuredLabel: "Featured — Ancient Egypt AI",
-    featuredImageUrl: aiChat.url,
+    featuredImageUrl: aiChat,
     featuredAlt: "Ancient Egypt AI chat app mockup",
   },
   work: {
