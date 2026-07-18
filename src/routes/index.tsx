@@ -152,10 +152,6 @@ function Hero() {
           <span className="opacity-60">Chat · History</span>
         </div>
 
-        <div className={`absolute bottom-6 right-6 ${monoTiny} text-right leading-tight text-cocoa/45`}>
-          Kemet Wsr / 2026<br />
-          Parchment finish / cocoa ink
-        </div>
       </div>
     </section>
   );
