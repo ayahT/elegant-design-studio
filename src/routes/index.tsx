@@ -3,6 +3,7 @@ import { useState, type FormEvent } from "react";
 import { ArrowUpRight, Menu, X } from "lucide-react";
 
 import logo from "@/assets/logo-mark.png.asset.json";
+import aiChat from "@/assets/ai-chat.png.asset.json";
 import lamborghini from "@/assets/proj-1.png";
 import cowboy from "@/assets/proj-2.png";
 import nexo from "@/assets/nexo-new.png";
@@ -130,34 +131,29 @@ function Hero() {
         </div>
       </div>
 
-      {/* Right: schematic panel */}
+      {/* Right: featured project panel */}
       <div className="relative bg-ivory p-8 md:p-14 flex flex-col items-center justify-center min-h-[420px] md:min-h-0">
         <div className={`absolute top-6 left-6 ${mono} text-cocoa/55`}>
-          MK. IV — Isometric Schematic
+          Featured — Ancient Egypt AI
         </div>
 
-        <svg viewBox="0 0 400 400" fill="none" className="w-3/4 max-w-[360px] h-auto opacity-90">
-          <rect x="80"  y="90"  width="240" height="220" stroke="currentColor" strokeWidth="1.5" className="text-cocoa-deep" />
-          <rect x="100" y="110" width="200" height="130" stroke="currentColor" strokeWidth="1" strokeDasharray="4 3" className="text-cocoa-deep/60" />
-          <circle cx="140" cy="275" r="10" stroke="currentColor" strokeWidth="1" className="text-cocoa-deep" />
-          <circle cx="170" cy="275" r="10" stroke="currentColor" strokeWidth="1" className="text-cocoa-deep" />
-          <rect x="220" y="265" width="80" height="20" stroke="currentColor" strokeWidth="1" className="text-cocoa-deep" />
-          <path d="M320 150 H370" stroke="currentColor" strokeWidth="0.75" className="text-cocoa-deep/60" />
-          <path d="M80  200 H30"  stroke="currentColor" strokeWidth="0.75" className="text-cocoa-deep/60" />
-          <path d="M200 90  V40"  stroke="currentColor" strokeWidth="0.75" className="text-cocoa-deep/60" />
-        </svg>
+        <img
+          src={aiChat.url}
+          alt="Ancient Egypt AI chat app mockup"
+          className="w-full max-w-[420px] h-auto object-contain"
+        />
 
         <div className={`absolute top-[28%] right-6 ${monoTiny} border-l ${bd} pl-2 text-cocoa-deep`}>
-          <span className="block font-bold">Display Panel</span>
-          <span className="opacity-60">Editorial · 120hz</span>
+          <span className="block font-bold">Product</span>
+          <span className="opacity-60">Mobile · AI</span>
         </div>
         <div className={`absolute bottom-[34%] left-6 ${monoTiny} border-r ${bd} pr-2 text-right text-cocoa-deep`}>
-          <span className="block font-bold">Input Matrix</span>
-          <span className="opacity-60">Handcrafted</span>
+          <span className="block font-bold">Interface</span>
+          <span className="opacity-60">Chat · History</span>
         </div>
 
         <div className={`absolute bottom-6 right-6 ${monoTiny} text-right leading-tight text-cocoa/45`}>
-          Rev D / 2026.03<br />
+          Kemet Wsr / 2026<br />
           Parchment finish / cocoa ink
         </div>
       </div>
