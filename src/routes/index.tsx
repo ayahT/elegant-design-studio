@@ -1,51 +1,17 @@
-import { createFileRoute } from "@tanstack/react-router";
-import { useState, type FormEvent } from "react";
+import { createFileRoute, useNavigate } from "@tanstack/react-router";
+import { useEffect, useState, type FormEvent } from "react";
+import { useQuery } from "@tanstack/react-query";
 import { ArrowUpRight, Menu, X } from "lucide-react";
+import { useServerFn } from "@tanstack/react-start";
 
-import logo from "@/assets/logo-mark.png.asset.json";
-import aiChat from "@/assets/ai-chat.png.asset.json";
-import lamborghini from "@/assets/proj-1.png";
-import cowboy from "@/assets/proj-2.png";
-import nexo from "@/assets/nexo-new.png";
-import nova from "@/assets/nova-new.png";
-import davies from "@/assets/proj-4.png";
-import ataa from "@/assets/ataa-new.png";
-import movo from "@/assets/movo.png";
-import zadna from "@/assets/zadna.png";
+import { getContent, submitMessage } from "@/lib/content.functions";
+import { defaultSite, mergeContent, type SiteContent, type SiteProject } from "@/lib/site-defaults";
 
 export const Route = createFileRoute("/")({
   component: Home,
 });
 
-type Project = {
-  n: string;
-  name: string;
-  tagline: string;
-  year: string;
-  discipline: string;
-  location: string;
-  image: string;
-  link?: string;
-};
-
-const designProjects: Project[] = [
-  { n: "I",   name: "Ataa Platform", tagline: "A specialized platform for providing Adhiyah (sacrificial) services inside and outside Egypt, with multiple safe options tailored to users' needs.", year: "2024", discipline: "Platform · Web", location: "Cairo", image: ataa, link: "https://www.behance.net/gallery/247841697/_" },
-  { n: "II",  name: "MOVO App",      tagline: "A mobility app helping riders navigate the city with live traffic, routing and multi-modal transport options.", year: "2024", discipline: "Product · Mobile", location: "London", image: movo, link: "https://www.behance.net/gallery/248654627/MOVO-App" },
-  { n: "III", name: "Zadna",         tagline: "A halal restaurant app designed to help Muslim communities living abroad easily find trusted, certified Islamic food.", year: "2024", discipline: "Product · Mobile", location: "Global", image: zadna, link: "https://www.behance.net/gallery/243174961/ZADNA" },
-];
-
-const developmentProjects: Project[] = [
-  { n: "IV",  name: "Lamborghini Fenomeno", tagline: "Launch site for a limited-edition 820 hp hybrid V12 hypercar, handcrafted in Sant'Agata.", year: "2025", discipline: "Brand · Web", location: "Sant'Agata Bolognese", image: lamborghini, link: "https://object-forge-zone.vercel.app/" },
-  { n: "V",   name: "Nova Intelligence",    tagline: "An agentic AI platform helping SAP teams modernize and operate complex systems up to five times faster.", year: "2025", discipline: "Identity · Web", location: "Berlin", image: nova, link: "https://impact-glow-lead-cs4dktwpf-yos-projects-a37281b6.vercel.app/" },
-  { n: "VI",  name: "Nexo",                 tagline: "An autonomous customer intelligence platform turning signals into role-based action plans.", year: "2025", discipline: "Product · Web", location: "Amsterdam", image: nexo, link: "https://nexo-style-web.vercel.app/" },
-  { n: "VII", name: "Cowboy",               tagline: "A connected e-bike brand for city riders — adaptive motor, built-in GPS, theft protection.", year: "2024", discipline: "Brand · E-commerce", location: "Brussels", image: cowboy, link: "https://hero-font-haven-4hm8bcvyv-yos-projects-a37281b6.vercel.app/" },
-  { n: "VIII",name: "Davies",               tagline: "An independent studio crafting bold brands and modern websites for founders.", year: "2024", discipline: "Portfolio · Web", location: "London", image: davies, link: "https://pixel-perfect-replica-0827.vercel.app/" },
-];
-
-const services = [
-  { n: "01", title: "UI/UX",            body: "Research, wireframes and interfaces shaped around real user behavior." },
-  { n: "02", title: "Web Development",  body: "Fast, modern, hand-built sites and products with clean architecture." },
-];
+type Project = SiteProject;
 
 /* Technical archive utility classes */
 const mono     = "font-mono text-[10px] uppercase tracking-[0.18em]";
