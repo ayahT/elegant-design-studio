@@ -80,13 +80,13 @@ export const deleteMessage = createServerFn({ method: "POST" })
   });
 
 export const saveContent = createServerFn({ method: "POST" })
-  .inputValidator((data: { value: unknown }) => data)
+  .inputValidator((data: { value: unknown }) => ({ value: data.value as never }))
   .handler(async ({ data }) => {
     await requireUnlocked();
     const { supabaseAdmin } = await import("@/integrations/supabase/client.server");
     const { error } = await supabaseAdmin
       .from("site_content")
-      .upsert({ key: "site", value: data.value as never, updated_at: new Date().toISOString() });
+      .upsert({ key: "site", value: data.value, updated_at: new Date().toISOString() });
     if (error) throw error;
     return { ok: true as const };
   });
