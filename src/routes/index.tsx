@@ -304,6 +304,17 @@ function Contact({ site }: { site: SiteContent }) {
         <a href={`mailto:${site.contact.email}`} className="mt-10 inline-block font-serif italic text-[24px] md:text-[30px] text-cocoa-deep underline decoration-cocoa/30 underline-offset-[8px] hover:decoration-cocoa-deep">
           {site.contact.email}
         </a>
+        <div className="mt-10 flex flex-col gap-3">
+          <span className={`${mono} text-cocoa/55`}>Or schedule directly</span>
+          <a
+            href={site.contact.bookingUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className={`inline-flex items-center gap-2 self-start border ${bd} px-5 py-3 ${mono} font-bold text-cocoa-deep hover:bg-ivory transition-colors`}
+          >
+            {site.contact.bookingLabel} <ArrowUpRight className="h-3.5 w-3.5" />
+          </a>
+        </div>
       </div>
       <form onSubmit={onSubmit} className={`bg-ivory p-8 md:p-14 flex flex-col gap-8`}>
         <Field name="name"  label="Name"  placeholder="Your name" />
