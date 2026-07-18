@@ -199,18 +199,15 @@ function Work() {
 }
 
 function WorkGroup({ label, projects }: { label: string; projects: Project[] }) {
+  const count = `${projects.length}`.padStart(2, "0");
   return (
     <div className={`border-b ${bd}`}>
       <div className={`flex items-center gap-4 border-b ${bd} bg-ivory/50 px-6 py-4 ${mono} text-cocoa-deep`}>
         <span className="h-px w-8 bg-cocoa-deep/30" />
         {label}
-        <span className="ml-auto text-cocoa/55">{String(projects.length).padStart(2, "0")} / {String(projects.length).padStart(2, "0") units</span>
+        <span className="ml-auto text-cocoa/55">{count} / {count} units</span>
       </div>
-      <ol className={`divide-y ${bd.replace("border-", "divide-")}`}>
-        {projects.map((p) => (
-          <ProjectRow key={p.name} project={p} />
-        ))}
-      </ol>
+      ...
     </div>
   );
 }
