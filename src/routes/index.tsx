@@ -34,11 +34,11 @@ const designProjects: Project[] = [
 ];
 
 const developmentProjects: Project[] = [
-  { n: "IV",  name: "Lamborghini Fenomeno", tagline: "Launch site for a limited-edition 820 hp hybrid V12 hypercar, handcrafted in Sant'Agata.", year: "2025", discipline: "Brand · Web", location: "Sant'Agata Bolognese", image: lamborghini },
-  { n: "V",   name: "Nova Intelligence",    tagline: "An agentic AI platform helping SAP teams modernize and operate complex systems up to five times faster.", year: "2025", discipline: "Identity · Web", location: "Berlin", image: nova },
-  { n: "VI",  name: "Nexo",                 tagline: "An autonomous customer intelligence platform turning signals into role-based action plans.", year: "2025", discipline: "Product · Web", location: "Amsterdam", image: nexo },
-  { n: "VII", name: "Cowboy",               tagline: "A connected e-bike brand for city riders — adaptive motor, built-in GPS, theft protection.", year: "2024", discipline: "Brand · E-commerce", location: "Brussels", image: cowboy },
-  { n: "VIII",name: "Davies",               tagline: "An independent studio crafting bold brands and modern websites for founders.", year: "2024", discipline: "Portfolio · Web", location: "London", image: davies },
+  { n: "IV",  name: "Lamborghini Fenomeno", tagline: "Launch site for a limited-edition 820 hp hybrid V12 hypercar, handcrafted in Sant'Agata.", year: "2025", discipline: "Brand · Web", location: "Sant'Agata Bolognese", image: lamborghini, link: "https://object-forge-zone.vercel.app/" },
+  { n: "V",   name: "Nova Intelligence",    tagline: "An agentic AI platform helping SAP teams modernize and operate complex systems up to five times faster.", year: "2025", discipline: "Identity · Web", location: "Berlin", image: nova, link: "https://impact-glow-lead-cs4dktwpf-yos-projects-a37281b6.vercel.app/" },
+  { n: "VI",  name: "Nexo",                 tagline: "An autonomous customer intelligence platform turning signals into role-based action plans.", year: "2025", discipline: "Product · Web", location: "Amsterdam", image: nexo, link: "https://nexo-style-web.vercel.app/" },
+  { n: "VII", name: "Cowboy",               tagline: "A connected e-bike brand for city riders — adaptive motor, built-in GPS, theft protection.", year: "2024", discipline: "Brand · E-commerce", location: "Brussels", image: cowboy, link: "https://hero-font-haven-4hm8bcvyv-yos-projects-a37281b6.vercel.app/" },
+  { n: "VIII",name: "Davies",               tagline: "An independent studio crafting bold brands and modern websites for founders.", year: "2024", discipline: "Portfolio · Web", location: "London", image: davies, link: "https://pixel-perfect-replica-0827.vercel.app/" },
 ];
 
 const services = [
