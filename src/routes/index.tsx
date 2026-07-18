@@ -32,8 +32,6 @@ const projects: Project[] = [
   { n: "III", name: "Nexo",                 tagline: "An autonomous customer intelligence platform turning signals into role-based action plans.", year: "2025", discipline: "Product · Web", location: "Amsterdam", image: nexo },
   { n: "IV",  name: "Cowboy",               tagline: "A connected e-bike brand for city riders — adaptive motor, built-in GPS, theft protection.", year: "2024", discipline: "Brand · E-commerce", location: "Brussels", image: cowboy },
   { n: "V",   name: "Davies",               tagline: "An independent studio crafting bold brands and modern websites for founders.", year: "2024", discipline: "Portfolio · Web", location: "London", image: davies },
-  { n: "VI",  name: "CarCaring",            tagline: "A car service platform for booking certified mechanics with transparent, warranty-backed repairs.", year: "2024", discipline: "Product · Brand", location: "Paris", image: carcaring },
-  { n: "VII", name: "Bloom",                tagline: "A floral delivery service connecting customers with local artisan florists for same-day bouquets.", year: "2024", discipline: "E-commerce · Brand", location: "Munich", image: bloom },
 ];
 
 const services = [
