@@ -24,6 +24,7 @@ type Project = {
   discipline: string;
   location: string;
   image: string;
+  link?: string;
 };
 
 const designProjects: Project[] = [
