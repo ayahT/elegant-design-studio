@@ -126,7 +126,7 @@ function Hero() {
             View Selected Work
           </a>
           <a href="#contact" className={`px-6 py-3 border ${bd} ${mono} font-bold hover:bg-ivory transition-colors inline-flex items-center gap-2`}>
-            Commission Studio <ArrowUpRight className="h-3.5 w-3.5" />
+            Contact us <ArrowUpRight className="h-3.5 w-3.5" />
           </a>
         </div>
       </div>
