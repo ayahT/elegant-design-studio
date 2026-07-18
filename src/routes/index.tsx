@@ -400,9 +400,8 @@ function Footer() {
         Handcrafted in the studio
       </div>
       <div className={`col-span-6 md:col-span-2 border-r ${bd} p-6 flex gap-4 text-cocoa/70`}>
-        <a href="#" className="hover:text-cocoa-deep">IG</a>
-        <a href="#" className="hover:text-cocoa-deep">LI</a>
-        <a href="#" className="hover:text-cocoa-deep">TW</a>
+        <a href="https://www.instagram.com/kemet.wsr/?fbclid=IwY2xjawTI1EdleHRuA2FlbQIxMQBicmlkETExSmtjQUNqSGdkNmxMZVNDc3J0YwZhcHBfaWQBMAABHhd8L0ZApbKsKTDvCHbPJIkWIjcwqs-CaeXz9ph0QG-IGf94GZAftSHG4eUP_aem_zoU_XFzIRr-qnNfc7Qu0LA" target="_blank" rel="noopener noreferrer" className="hover:text-cocoa-deep">IG</a>
+        <a href="https://www.linkedin.com/company/kemet-wsr/" target="_blank" rel="noopener noreferrer" className="hover:text-cocoa-deep">LI</a>
       </div>
       <a href="mailto:kemetwsr@gmail.com" className="col-span-12 md:col-span-2 p-6 text-right hover:bg-ivory transition-colors">
         kemetwsr@gmail.com →
