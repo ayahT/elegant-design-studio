@@ -383,7 +383,37 @@ function Home() {
   });
   const site: SiteContent = data?.value ? mergeContent(data.value) : defaultSite;
 
+  const [loaded, setLoaded] = useState(false);
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    const imgs = Array.from(document.images);
+    if (imgs.length === 0) { setLoaded(true); return; }
+    let remaining = imgs.length;
+    const done = () => { remaining -= 1; if (remaining <= 0) setLoaded(true); };
+    imgs.forEach((img) => {
+      if (img.complete && img.naturalWidth > 0) done();
+      else {
+        img.addEventListener("load", done, { once: true });
+        img.addEventListener("error", done, { once: true });
+      }
+    });
+    const t = setTimeout(() => setLoaded(true), 10000);
+    return () => clearTimeout(t);
+  }, [site]);
+
   return (
+    <>
+      <div
+        className={`fixed inset-0 z-50 flex items-center justify-center bg-parchment transition-opacity duration-700 ${
+          loaded ? "pointer-events-none opacity-0" : "opacity-100"
+        }`}
+        aria-hidden={loaded}
+      >
+        <div className="flex flex-col items-center gap-4">
+          <img src={site.brand.logoUrl} alt="" className="h-10 w-10 object-contain animate-pulse" />
+          <span className={`${mono} text-cocoa/60`}>Loading</span>
+        </div>
+      </div>
     <div className="min-h-screen bg-parchment text-cocoa-deep p-3 md:p-6">
       <div className={`mx-auto max-w-[1360px] border ${bd} bg-parchment relative`}>
         <Nav site={site} />
@@ -397,5 +427,6 @@ function Home() {
         <Footer site={site} />
       </div>
     </div>
+    </>
   );
 }
