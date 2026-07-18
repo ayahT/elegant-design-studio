@@ -114,11 +114,10 @@ function Hero() {
         </p>
 
         {/* Spec Grid */}
-        <div className={`grid grid-cols-2 lg:grid-cols-4 border ${bd} bg-ivory`}>
-          <SpecCell label="Region"  value="Cairo · Remote" />
-          <SpecCell label="Founded" value="MMXXIV" />
-          <SpecCell label="Focus"   value="Brand · Web" />
-          <SpecCell label="Booking" value="Q3 · MMXXVI" last />
+        <div className={`grid grid-cols-2 lg:grid-cols-3 border ${bd} bg-ivory`}>
+          <SpecCell label="Region"  value="Alexandria · Remote" />
+          <SpecCell label="Founded" value="2025" />
+          <SpecCell label="Focus"   value="UI/UX · Web" last />
         </div>
 
         <div className="flex flex-wrap gap-4">
