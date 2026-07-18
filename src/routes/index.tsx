@@ -302,7 +302,7 @@ function About() {
         <table className={`w-full ${monoTiny} text-cocoa-deep`}>
           <tbody>
             <LedgerRow k="Stage"        v="Early Revenue" />
-            <LedgerRow k="Practice"     v="Brand · Web" />
+            <LedgerRow k="Practice"     v="UI/UX · Web" />
             <LedgerRow k="Founded"      v="MMXXIV / Cairo" />
             <LedgerRow k="Selected"     v="VIII commissions" />
             <LedgerRow k="Availability" v="94% nominal" last />
