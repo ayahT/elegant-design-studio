@@ -340,7 +340,7 @@ function Contact() {
     const data = new FormData(e.currentTarget);
     const subject = encodeURIComponent(`New project inquiry — ${data.get("name") || "friend"}`);
     const body = encodeURIComponent(String(data.get("message") || ""));
-    window.location.href = `mailto:hello@kemetwsr.com?subject=${subject}&body=${body}`;
+    window.location.href = `mailto:kemetwsr@gmail.com?subject=${subject}&body=${body}`;
     setSent(true);
   }
   return (
@@ -353,8 +353,8 @@ function Contact() {
         <p className="mt-8 max-w-md text-[15px] leading-[1.75] text-cocoa/75">
           Tell us a little about your project. We reply to every serious enquiry within two business days.
         </p>
-        <a href="mailto:hello@kemetwsr.com" className="mt-10 inline-block font-serif italic text-[24px] md:text-[30px] text-cocoa-deep underline decoration-cocoa/30 underline-offset-[8px] hover:decoration-cocoa-deep">
-          hello@kemetwsr.com
+        <a href="mailto:kemetwsr@gmail.com" className="mt-10 inline-block font-serif italic text-[24px] md:text-[30px] text-cocoa-deep underline decoration-cocoa/30 underline-offset-[8px] hover:decoration-cocoa-deep">
+          kemetwsr@gmail.com
         </a>
       </div>
 
@@ -415,8 +415,8 @@ function Footer() {
         <a href="#" className="hover:text-cocoa-deep">LI</a>
         <a href="#" className="hover:text-cocoa-deep">TW</a>
       </div>
-      <a href="mailto:hello@kemetwsr.com" className="col-span-12 md:col-span-2 p-6 text-right hover:bg-ivory transition-colors">
-        hello@kemetwsr.com →
+      <a href="mailto:kemetwsr@gmail.com" className="col-span-12 md:col-span-2 p-6 text-right hover:bg-ivory transition-colors">
+        kemetwsr@gmail.com →
       </a>
     </footer>
   );
