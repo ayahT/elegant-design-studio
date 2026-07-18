@@ -105,7 +105,7 @@ function Hero() {
     <section id="top" className="grid grid-cols-1 md:grid-cols-2">
       {/* Left: narrative + specs */}
       <div className={`flex flex-col gap-8 border-b md:border-b-0 md:border-r ${bd} p-8 md:p-14`}>
-        <span className={`${mono} text-cocoa/70`}>Independent Design Studio / MMXXVI / Unit 01</span>
+        <span className={`${mono} text-cocoa/70`}>Independent Design Studio</span>
         <h1 className="font-serif text-[38px] md:text-[68px] leading-[0.95] tracking-[-0.01em] text-cocoa-deep">
           we builds the future of your online presence.
         </h1>
