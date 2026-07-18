@@ -258,7 +258,7 @@ function Services() {
         </div>
         <div className="col-span-12 md:col-span-6 p-6 md:p-8">
           <h2 className="font-serif text-[28px] md:text-[40px] leading-[1.05] text-cocoa-deep">
-            A small studio. <span className="italic">A wide toolkit.</span>
+            What we do. <span className="italic">With focus.</span>
           </h2>
         </div>
         <div className={`col-span-12 md:col-span-3 border-l ${bd} p-6 flex items-end justify-end ${mono} text-cocoa/60`}>
