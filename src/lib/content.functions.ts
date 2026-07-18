@@ -1,7 +1,9 @@
 import { createServerFn } from "@tanstack/react-start";
 import { createClient } from "@supabase/supabase-js";
 
-export const getContent = createServerFn({ method: "GET" }).handler(async () => {
+export type JsonValue = string | number | boolean | null | JsonValue[] | { [k: string]: JsonValue };
+
+export const getContent = createServerFn({ method: "GET" }).handler(async (): Promise<{ value: JsonValue | null }> => {
   const url = process.env.SUPABASE_URL!;
   const key = process.env.SUPABASE_PUBLISHABLE_KEY!;
   const supabase = createClient(url, key, {
@@ -20,7 +22,7 @@ export const getContent = createServerFn({ method: "GET" }).handler(async () => 
     .select("value")
     .eq("key", "site")
     .maybeSingle();
-  return { value: (data?.value as Record<string, unknown> | null) ?? null };
+  return { value: (data?.value as JsonValue | null) ?? null };
 });
 
 export const submitMessage = createServerFn({ method: "POST" })
