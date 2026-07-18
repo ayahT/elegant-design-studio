@@ -303,7 +303,7 @@ function About() {
           <tbody>
             <LedgerRow k="Stage"        v="Early Revenue" />
             <LedgerRow k="Practice"     v="UI/UX · Web" />
-            <LedgerRow k="Founded"      v="MMXXIV / Cairo" />
+            <LedgerRow k="Founded"      v="2025 Alexandria" />
             <LedgerRow k="Selected"     v="VIII commissions" />
             <LedgerRow k="Availability" v="94% nominal" last />
           </tbody>
