@@ -178,11 +178,11 @@ function Work() {
         </div>
         <div className="col-span-12 md:col-span-6 p-6 md:p-8">
           <h2 className="font-serif text-[28px] md:text-[40px] leading-[1.05] text-cocoa-deep">
-            Seven commissions — <span className="italic">MMXXIV → MMXXVI.</span>
+            Five commissions — <span className="italic">MMXXIV → MMXXVI.</span>
           </h2>
         </div>
         <div className={`col-span-12 md:col-span-3 border-l ${bd} p-6 flex items-end justify-end ${mono} text-cocoa/60`}>
-          07 / 07 units
+          05 / 05 units
         </div>
       </div>
 
@@ -287,7 +287,7 @@ function About() {
             <LedgerRow k="Stage"        v="Booking Q3 · MMXXVI" />
             <LedgerRow k="Practice"     v="Brand · Web" />
             <LedgerRow k="Founded"      v="MMXXIV / Cairo" />
-            <LedgerRow k="Selected"     v="VII commissions" />
+            <LedgerRow k="Selected"     v="V commissions" />
             <LedgerRow k="Availability" v="94% nominal" last />
           </tbody>
         </table>
