@@ -236,7 +236,12 @@ function ProjectRow({ project }: { project: Project }) {
         </div>
         <div className="flex items-center justify-between">
           <span className={`${mono} text-cocoa/55`}>{project.location}</span>
-          <a href="#contact" className={`inline-flex items-center gap-2 border-b ${bd} pb-1 ${mono} text-cocoa-deep hover:border-cocoa-deep`}>
+          <a
+            href={project.link || "#contact"}
+            target={project.link ? "_blank" : undefined}
+            rel={project.link ? "noopener noreferrer" : undefined}
+            className={`inline-flex items-center gap-2 border-b ${bd} pb-1 ${mono} text-cocoa-deep hover:border-cocoa-deep`}
+          >
             View case <ArrowUpRight className="h-3.5 w-3.5" />
           </a>
         </div>
