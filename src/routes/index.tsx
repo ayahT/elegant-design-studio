@@ -397,7 +397,6 @@ function Footer() {
       <div className={`col-span-12 md:col-span-5 border-r ${bd} p-6 flex items-center gap-3`}>
         <img src={logo.url} alt="" className="h-5 w-5 object-contain" />
         <span className="font-bold italic tracking-[0.18em]">Kemet Wsr</span>
-        <span className="text-cocoa/50">© MMXXVI</span>
       </div>
       <div className={`col-span-6 md:col-span-3 border-r ${bd} p-6`}>
         Handcrafted in the studio
