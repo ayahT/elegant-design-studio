@@ -5,11 +5,12 @@ import { ArrowUpRight, Menu, X } from "lucide-react";
 import logo from "@/assets/logo-mark.png.asset.json";
 import lamborghini from "@/assets/proj-1.png";
 import cowboy from "@/assets/proj-2.png";
-import nexo from "@/assets/proj-3.png";
-import nova from "@/assets/proj-7.png";
+import nexoAsset from "@/assets/nexo-new.png.asset.json";
+import novaAsset from "@/assets/nova-new.png.asset.json";
 import davies from "@/assets/proj-4.png";
-import carcaring from "@/assets/proj-5.png";
-import bloom from "@/assets/proj-6.png";
+
+const nexo = nexoAsset.url;
+const nova = novaAsset.url;
 
 export const Route = createFileRoute("/")({
   component: Home,
