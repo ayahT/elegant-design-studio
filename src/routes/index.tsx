@@ -150,7 +150,7 @@ function WorkGroup({ label, projects }: { label: string; projects: Project[] }) 
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-12">
         {projects.map((p) => (
-          <ProjectCard key={p.name} project={p} group={label} />
+          <ProjectCard key={p.name} project={p} />
         ))}
       </div>
     </div>
