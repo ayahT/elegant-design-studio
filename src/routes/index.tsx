@@ -181,8 +181,8 @@ function Services({ site, filter, setFilter }: { site: SiteContent; filter: "all
   return (
     <section id="services" className="py-20 md:py-32 bg-ivory border-b border-cocoa-deep/10">
       <div className="mx-auto max-w-[1360px] px-6 md:px-10">
-        <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-10 lg:gap-16">
-          <h2 className="font-serif text-[32px] md:text-[48px] leading-[1.05] text-cocoa-deep shrink-0">
+        <div className="flex flex-col gap-10 lg:gap-16">
+          <h2 className="font-serif text-[32px] md:text-[48px] leading-[1.05] text-cocoa-deep">
             Our Services
           </h2>
           <ol className="flex flex-col md:flex-row md:items-stretch gap-6 md:gap-8 lg:gap-12" role="tablist" aria-label="Project filters">
