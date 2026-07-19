@@ -88,7 +88,7 @@ function Hero({ site }: { site: SiteContent }) {
           <div className="lg:col-span-5 flex flex-col gap-6">
             {site.hero.featuredImageUrl && (
               <div className="flex flex-col gap-5">
-                <div className="overflow-hidden rounded-sm bg-ivory p-5 md:p-8">
+                <div className="overflow-hidden rounded-sm border border-cocoa/10 bg-ivory p-5 md:p-8">
                   <img
                     src={site.hero.featuredImageUrl}
                     alt={site.hero.featuredAlt}
