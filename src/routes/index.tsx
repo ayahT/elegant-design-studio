@@ -85,25 +85,29 @@ function Hero({ site }: { site: SiteContent }) {
               </a>
             </div>
           </div>
-          <div className="lg:col-span-5 flex flex-col gap-10">
+          <div className="lg:col-span-5 flex flex-col gap-6">
             {site.hero.featuredImageUrl && (
-              <div className="relative overflow-hidden rounded-sm bg-ivory">
-                <span className={`absolute left-5 top-5 z-10 ${mono} text-cocoa/60`}>
+              <div className="flex flex-col gap-5">
+                <span className={`${mono} text-cocoa/60 text-[13px]`}>
                   Featured — Ancient Egypt AI
                 </span>
-                <span className="absolute left-5 bottom-5 z-10 flex flex-col gap-1">
-                  <span className={`${mono} text-cocoa-deep`}>Interface</span>
-                  <span className={`${mono} text-cocoa/50`}>Chat · History</span>
-                </span>
-                <span className="absolute right-5 top-1/2 -translate-y-1/2 z-10 flex flex-col gap-1 text-right">
-                  <span className={`${mono} text-cocoa-deep`}>Product</span>
-                  <span className={`${mono} text-cocoa/50`}>Mobile · AI</span>
-                </span>
-                <img
-                  src={site.hero.featuredImageUrl}
-                  alt={site.hero.featuredAlt}
-                  className="w-full h-auto object-cover"
-                />
+                <div className="overflow-hidden rounded-sm bg-ivory">
+                  <img
+                    src={site.hero.featuredImageUrl}
+                    alt={site.hero.featuredAlt}
+                    className="w-full h-auto object-cover"
+                  />
+                </div>
+                <div className="flex items-start justify-between gap-4">
+                  <span className="flex flex-col gap-1">
+                    <span className={`${mono} text-cocoa-deep text-[13px]`}>Interface</span>
+                    <span className={`${mono} text-cocoa/50 text-[12px]`}>Chat · History</span>
+                  </span>
+                  <span className="flex flex-col gap-1 text-right">
+                    <span className={`${mono} text-cocoa-deep text-[13px]`}>Product</span>
+                    <span className={`${mono} text-cocoa/50 text-[12px]`}>Mobile · AI</span>
+                  </span>
+                </div>
               </div>
             )}
             <div className="flex flex-wrap gap-x-8 gap-y-3">
