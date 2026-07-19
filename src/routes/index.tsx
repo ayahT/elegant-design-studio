@@ -166,7 +166,7 @@ function ProjectCard({ project, ctaLabel }: { project: Project; ctaLabel: string
       rel={project.link ? "noopener noreferrer" : undefined}
       className="group flex flex-col gap-6"
     >
-      <div className="relative bg-ivory rounded-sm overflow-hidden aspect-[4/3] flex items-center justify-center p-8 md:p-12">
+      <div className="relative bg-ivory rounded-sm overflow-hidden border border-cocoa/10 aspect-[4/3] flex items-center justify-center p-8 md:p-12">
         <img
           src={project.image}
           alt={project.name}
