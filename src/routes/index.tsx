@@ -150,15 +150,15 @@ function WorkGroup({ label, projects }: { label: string; projects: Project[] }) 
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-12">
         {projects.map((p) => (
-          <ProjectCard key={p.name} project={p} group={label} />
+          <ProjectCard key={p.name} project={p} />
         ))}
       </div>
     </div>
   );
 }
 
-function ProjectCard({ project, group }: { project: Project; group: string }) {
-  const ctaLabel = group === "Development" ? "View website" : "View case";
+function ProjectCard({ project }: { project: Project }) {
+  const ctaLabel = "CaseStudy";
   return (
     <a
       href={project.link || "#contact"}
