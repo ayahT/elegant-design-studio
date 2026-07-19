@@ -325,10 +325,10 @@ function Contact({ site }: { site: SiteContent }) {
             <button
               type="submit"
               disabled={state === "sending"}
-              className="inline-flex items-center justify-between px-6 py-4 bg-ivory text-cocoa-deep font-serif italic text-[15px] hover:opacity-90 transition-opacity disabled:opacity-60"
+              className="inline-flex items-center gap-2 self-start border border-ivory/20 px-5 py-3 font-serif italic text-[14px] text-ivory hover:bg-ivory/10 transition-colors disabled:opacity-60"
             >
               {state === "sending" ? "Sending…" : state === "sent" ? "Message sent — thank you" : state === "error" ? "Something went wrong — retry" : site.contact.submitLabel}
-              <ArrowUpRight className="h-4 w-4" />
+              <ArrowUpRight className="h-3.5 w-3.5" />
             </button>
           </form>
         </div>
