@@ -1,5 +1,4 @@
 import logo from "@/assets/logo-mark.png";
-import aiChat from "@/assets/ai-chat.png";
 import lamborghini from "@/assets/proj-1.png";
 import cowboy from "@/assets/proj-2.png";
 import nexo from "@/assets/nexo-new.png";
@@ -69,20 +68,20 @@ export const defaultSite: SiteContent = {
       { label: "Founded", value: "2025" },
       { label: "Focus", value: "UI/UX · Web" },
     ],
-    ctaPrimary: "View Selected Work",
-    ctaSecondary: "Contact us",
-    featuredLabel: "Featured — Ancient Egypt AI",
-    featuredImageUrl: aiChat,
-    featuredAlt: "Ancient Egypt AI chat app mockup",
+    ctaPrimary: "Contact us",
+    ctaSecondary: "View Selected Work",
+    featuredLabel: "",
+    featuredImageUrl: "",
+    featuredAlt: "",
   },
   work: {
     heading: "Eight finished projects",
     italic: "since the beginning of 2026.",
-    count: "08 / 08 units",
+    count: "8 projects",
   },
   designProjects: [
     { n: "I", name: "Ataa Platform", tagline: "A specialized platform for providing Adhiyah (sacrificial) services inside and outside Egypt, with multiple safe options tailored to users' needs.", year: "2024", discipline: "Platform · Web", location: "Cairo", image: ataa, link: "https://www.behance.net/gallery/247841697/_" },
-    { n: "II", name: "MOVO App", tagline: "A mobility app helping riders navigate the city with live traffic, routing and multi-modal transport options.", year: "2024", discipline: "Product · Mobile", location: "London", image: movo, link: "https://www.behance.net/gallery/248654627/MOVO-App" },
+    { n: "II", name: "MOVO App", tagline: "A halal restaurant app designed to help Muslim communities living abroad easily find trusted, certified Islamic food.", year: "2024", discipline: "Product · Mobile", location: "London", image: movo, link: "https://www.behance.net/gallery/248654627/MOVO-App" },
     { n: "III", name: "Zadna", tagline: "A halal restaurant app designed to help Muslim communities living abroad easily find trusted, certified Islamic food.", year: "2024", discipline: "Product · Mobile", location: "Global", image: zadna, link: "https://www.behance.net/gallery/243174961/ZADNA" },
   ],
   developmentProjects: [
