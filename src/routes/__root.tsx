@@ -108,9 +108,6 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         href: appCss,
       },
       { rel: "icon", href: "/kemet-favicon-light-darkmark.png", type: "image/png" },
-      { rel: "icon", href: "/kemet-favicon-light-darkmark.png", type: "image/png", media: "(prefers-color-scheme: light)" },
-      { rel: "icon", href: "/kemet-favicon-dark-creammark.png", type: "image/png", media: "(prefers-color-scheme: dark)" },
-      { rel: "shortcut icon", href: "/kemet-favicon-darkmark.ico" },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       {
         rel: "preconnect",
@@ -160,26 +157,21 @@ function FaviconSwitcher() {
     const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
 
     const updateFavicon = () => {
-      const href = mediaQuery.matches
+      const base = mediaQuery.matches
         ? "/kemet-favicon-dark-creammark.png"
         : "/kemet-favicon-light-darkmark.png";
-      const existingIcons = document.querySelectorAll<HTMLLinkElement>('link[rel~="icon"]');
+      const href = `${base}?v=${Date.now()}`;
 
-      existingIcons.forEach((existingIcon) => {
-        existingIcon.href = href;
-      });
+      // Remove every existing icon link to avoid the browser holding onto a cached one.
+      document
+        .querySelectorAll<HTMLLinkElement>('link[rel~="icon"], link[rel="shortcut icon"]')
+        .forEach((el) => el.parentNode?.removeChild(el));
 
-      let icon = document.querySelector<HTMLLinkElement>('link[data-dynamic-favicon="true"]');
-
-      if (!icon) {
-        icon = document.createElement("link");
-        icon.rel = "icon";
-        icon.type = "image/png";
-        icon.dataset.dynamicFavicon = "true";
-        document.head.appendChild(icon);
-      }
-
+      const icon = document.createElement("link");
+      icon.rel = "icon";
+      icon.type = "image/png";
       icon.href = href;
+      document.head.appendChild(icon);
     };
 
     updateFavicon();
