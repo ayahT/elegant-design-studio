@@ -132,7 +132,7 @@ export const defaultSite: SiteContent = {
       discipline: "Identity · Web",
       location: "Berlin",
       image: nova,
-      link: "https://impact-glow-lead.vercel.app/https://hero-font-haven.vercel.app/",
+      link: "https://impact-glow-lead.vercel.app",
     },
     {
       n: "VI",
