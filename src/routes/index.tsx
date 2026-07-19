@@ -187,7 +187,7 @@ function Services({ site, filter, setFilter }: { site: SiteContent; filter: "all
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
           <div className="lg:col-span-4">
             <h2 className="font-serif text-[32px] md:text-[48px] leading-[1.05] text-cocoa-deep">
-              What we do. <span className="italic">With focus.</span>
+              Our services
             </h2>
           </div>
           <div className="lg:col-span-8">
