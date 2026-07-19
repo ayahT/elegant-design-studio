@@ -200,7 +200,6 @@ function Services({ site, filter, setFilter }: { site: SiteContent; filter: "all
                     aria-selected={active}
                     className={`w-full h-full flex flex-col items-start text-left transition-colors ${active ? "text-cocoa-deep" : "text-cocoa/70 hover:text-cocoa-deep"}`}
                   >
-                    <span className={`${mono} mb-4 ${active ? "text-clay-deep" : "text-cocoa/40"}`}>{s.n}</span>
                     <h3 className="font-serif text-[22px] md:text-[26px] leading-[1.1] mb-3">
                       {s.title}
                     </h3>
