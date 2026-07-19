@@ -1,7 +1,7 @@
 import { createFileRoute, useNavigate } from "@tanstack/react-router";
 import { useEffect, useState, type FormEvent } from "react";
 import { useQuery } from "@tanstack/react-query";
-import { ArrowUpRight, Menu, X } from "lucide-react";
+import { ArrowUpRight, Instagram, Linkedin, Mail, Menu, X } from "lucide-react";
 import { useServerFn } from "@tanstack/react-start";
 
 import { getContent, submitMessage } from "@/lib/content.functions";
@@ -349,10 +349,16 @@ function Footer({ site }: { site: SiteContent }) {
           <span className="font-serif italic text-[15px]">{site.brand.name}</span>
         </div>
         <span className={`${mono} text-cocoa/50 text-center`}>{site.footer.tagline}</span>
-        <div className="flex items-center gap-6">
-          <a href={site.footer.instagramUrl} target="_blank" rel="noopener noreferrer" className={`${mono} text-cocoa/60 hover:text-cocoa-deep transition-colors`}>IG</a>
-          <a href={site.footer.linkedinUrl} target="_blank" rel="noopener noreferrer" className={`${mono} text-cocoa/60 hover:text-cocoa-deep transition-colors`}>LI</a>
-          <a href={`mailto:${site.contact.email}`} className={`${mono} text-cocoa/60 hover:text-cocoa-deep transition-colors`}>Email</a>
+        <div className="flex items-center gap-5">
+          <a href={site.footer.instagramUrl} target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="text-cocoa/60 hover:text-cocoa-deep transition-colors">
+            <Instagram size={18} strokeWidth={1.5} />
+          </a>
+          <a href={site.footer.linkedinUrl} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="text-cocoa/60 hover:text-cocoa-deep transition-colors">
+            <Linkedin size={18} strokeWidth={1.5} />
+          </a>
+          <a href={`mailto:${site.contact.email}`} aria-label="Email" className="text-cocoa/60 hover:text-cocoa-deep transition-colors">
+            <Mail size={18} strokeWidth={1.5} />
+          </a>
         </div>
       </div>
     </footer>
