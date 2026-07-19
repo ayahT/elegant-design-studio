@@ -232,11 +232,23 @@ function About({ site }: { site: SiteContent }) {
   return (
     <section id="about" className="py-20 md:py-32 border-t border-cocoa-deep/10">
       <div className="mx-auto max-w-[1360px] px-6 md:px-10">
-        <div className="max-w-3xl">
-          <span className={`${mono} text-clay-deep mb-8 block`}>ABOUT</span>
-          <p className="font-serif italic text-[22px] md:text-[32px] leading-[1.45] text-cocoa-deep/90">
-            {site.about.note}
-          </p>
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+          <div className="lg:col-span-8">
+            <span className={`${mono} text-clay-deep mb-8 block`}>ABOUT</span>
+            <p className="font-serif italic text-[22px] md:text-[32px] leading-[1.45] text-cocoa-deep/90">
+              {site.about.note}
+            </p>
+          </div>
+          <div className="lg:col-span-4 flex flex-col gap-8 lg:pt-16">
+            <div className="grid grid-cols-2 lg:grid-cols-1 gap-x-8 gap-y-6">
+              {site.about.specs.map((s) => (
+                <div key={s.label} className="flex flex-col gap-1.5">
+                  <span className={`${mono} text-cocoa/40`}>{s.label}</span>
+                  <span className="font-serif italic text-[18px] text-cocoa-deep">{s.value}</span>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -270,7 +282,7 @@ function Contact({ site }: { site: SiteContent }) {
       <div className="mx-auto max-w-[1360px] px-6 md:px-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24">
           <div className="flex flex-col gap-8">
-            <span className={`${mono} text-ivory/50`}>Enquire</span>
+            <span className={`${mono} text-ivory/50`}>&nbsp;</span>
             <h2 className="font-serif text-[40px] md:text-[64px] leading-[0.98] text-ivory">
               {site.contact.heading} <span className="italic">{site.contact.italic}</span>
             </h2>

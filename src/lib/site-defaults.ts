@@ -39,6 +39,7 @@ export type SiteContent = {
   services: { n: string; title: string; body: string; filter: "all" | "uiux" | "development" }[];
   about: {
     note: string;
+    specs: { label: string; value: string }[];
   };
   contact: {
     heading: string;
@@ -100,6 +101,11 @@ export const defaultSite: SiteContent = {
   about: {
     note:
       "Named for the oldest builders those who understood proportion, patience, and permanence. We take on a small number of projects each year so every one gets the depth it deserves. We aren't chasing trends. We're building work that still reads clearly in ten years.",
+    specs: [
+      { label: "Stage", value: "Independent" },
+      { label: "Founded", value: "2025" },
+      { label: "Region", value: "Alexandria · Remote" },
+    ],
   },
   contact: {
     heading: "Let's build",
