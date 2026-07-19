@@ -142,6 +142,7 @@ function Work({ site, filter }: { site: SiteContent; filter: "all" | "uiux" | "d
 }
 
 function WorkGroup({ label, projects }: { label: string; projects: Project[] }) {
+  const ctaLabel = label === "Development" ? "Website" : "CaseStudy";
   return (
     <div className="mb-20 last:mb-0">
       <div className="flex items-center gap-4 mb-10">
@@ -150,15 +151,14 @@ function WorkGroup({ label, projects }: { label: string; projects: Project[] }) 
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-12">
         {projects.map((p) => (
-          <ProjectCard key={p.name} project={p} />
+          <ProjectCard key={p.name} project={p} ctaLabel={ctaLabel} />
         ))}
       </div>
     </div>
   );
 }
 
-function ProjectCard({ project }: { project: Project }) {
-  const ctaLabel = "CaseStudy";
+function ProjectCard({ project, ctaLabel }: { project: Project; ctaLabel: string }) {
   return (
     <a
       href={project.link || "#contact"}
