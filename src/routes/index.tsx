@@ -188,7 +188,11 @@ function Services({ site, filter, setFilter }: { site: SiteContent; filter: "all
                 return (
                   <li key={s.title} className="group py-8 first:pt-0 last:pb-0">
                     <button
-                      onClick={() => setFilter(s.filter)}
+                      onClick={() => {
+                        setFilter(s.filter);
+                        const work = document.getElementById("work");
+                        if (work) work.scrollIntoView({ behavior: "smooth", block: "start" });
+                      }}
                       role="tab"
                       aria-selected={active}
                       className={`w-full flex items-start gap-6 text-left transition-colors ${active ? "text-cocoa-deep" : "text-cocoa/70 hover:text-cocoa-deep"}`}
