@@ -416,7 +416,9 @@ function Home() {
   const { data } = useQuery({
     queryKey: ["site-content"],
     queryFn: () => load(),
-    staleTime: 60_000,
+    staleTime: 0,
+    refetchOnWindowFocus: true,
+    refetchOnMount: "always",
   });
   const site: SiteContent = data?.value ? mergeContent(data.value) : defaultSite;
 
