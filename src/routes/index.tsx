@@ -76,6 +76,14 @@ function Hero({ site }: { site: SiteContent }) {
             <p className="text-[15px] md:text-[16px] leading-[1.8] text-cocoa/80 max-w-xl">
               {site.hero.description}
             </p>
+            <div className="flex flex-wrap gap-4 pt-2">
+              <a href="#contact" className="px-7 py-3.5 bg-cocoa-deep text-ivory font-serif italic text-[15px] hover:opacity-90 transition-opacity">
+                {site.hero.ctaPrimary}
+              </a>
+              <a href="#work" className="px-7 py-3.5 border border-cocoa-deep/20 font-serif italic text-[15px] text-cocoa-deep hover:bg-ivory transition-colors inline-flex items-center gap-2">
+                {site.hero.ctaSecondary} <ArrowUpRight className="h-3.5 w-3.5" />
+              </a>
+            </div>
           </div>
           <div className="lg:col-span-5 flex flex-col gap-10">
             {site.hero.featuredImageUrl && (
@@ -94,14 +102,6 @@ function Hero({ site }: { site: SiteContent }) {
                   <span className="font-serif italic text-[17px] text-cocoa-deep">{s.value}</span>
                 </div>
               ))}
-            </div>
-            <div className="flex flex-wrap gap-4 pt-2">
-              <a href="#contact" className="px-7 py-3.5 bg-cocoa-deep text-ivory font-serif italic text-[15px] hover:opacity-90 transition-opacity">
-                {site.hero.ctaPrimary}
-              </a>
-              <a href="#work" className="px-7 py-3.5 border border-cocoa-deep/20 font-serif italic text-[15px] text-cocoa-deep hover:bg-ivory transition-colors inline-flex items-center gap-2">
-                {site.hero.ctaSecondary} <ArrowUpRight className="h-3.5 w-3.5" />
-              </a>
             </div>
           </div>
         </div>
