@@ -111,7 +111,7 @@ export const defaultSite: SiteContent = {
     bookingLabel: "Book a 30-min call",
   },
   footer: {
-    tagline: "Handcrafted in the studio",
+    tagline: "Kemetwsr © 2026",
     instagramUrl: "https://www.instagram.com/kemet.wsr/",
     linkedinUrl: "https://www.linkedin.com/company/kemet-wsr/",
   },
