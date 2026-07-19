@@ -65,11 +65,7 @@ export const defaultSite: SiteContent = {
     headline: "We build the future of your online presence.",
     description:
       "Kemet Wsr is a small studio for founders who want their identity and product to feel considered, permanent, and unmistakably theirs.",
-    specs: [
-      { label: "Region", value: "Alexandria · Remote" },
-      { label: "Founded", value: "2025" },
-      { label: "Focus", value: "UI/UX · Web" },
-    ],
+    specs: [],
     ctaPrimary: "Contact us",
     ctaSecondary: "View Selected Work",
     featuredLabel: "",
