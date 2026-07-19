@@ -365,14 +365,14 @@ function Footer({ site }: { site: SiteContent }) {
           {site.footer.tagline}
         </Link>
         <div className="flex items-center gap-5">
-          <a href={site.footer.instagramUrl} target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="text-cocoa/60 hover:text-cocoa-deep transition-colors">
-            <Instagram size={18} strokeWidth={1.5} />
+          <a href={`mailto:${site.contact.email}`} aria-label="Email" className="text-cocoa/60 hover:text-cocoa-deep transition-colors">
+            <Mail size={18} strokeWidth={1.5} />
           </a>
           <a href={site.footer.linkedinUrl} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="text-cocoa/60 hover:text-cocoa-deep transition-colors">
             <Linkedin size={18} strokeWidth={1.5} />
           </a>
-          <a href={`mailto:${site.contact.email}`} aria-label="Email" className="text-cocoa/60 hover:text-cocoa-deep transition-colors">
-            <Mail size={18} strokeWidth={1.5} />
+          <a href={site.footer.instagramUrl} target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="text-cocoa/60 hover:text-cocoa-deep transition-colors">
+            <Instagram size={18} strokeWidth={1.5} />
           </a>
         </div>
       </div>
