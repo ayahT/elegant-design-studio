@@ -91,7 +91,7 @@ function Hero({ site }: { site: SiteContent }) {
                 <span className={`${mono} text-cocoa/60 text-[13px]`}>
                   Featured — Ancient Egypt AI
                 </span>
-                <div className="overflow-hidden rounded-sm bg-ivory">
+                <div className="overflow-hidden rounded-sm bg-ivory p-5 md:p-8">
                   <img
                     src={site.hero.featuredImageUrl}
                     alt={site.hero.featuredAlt}
