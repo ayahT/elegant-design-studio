@@ -233,7 +233,7 @@ function About({ site }: { site: SiteContent }) {
     <section id="about" className="py-20 md:py-32 border-t border-cocoa-deep/10">
       <div className="mx-auto max-w-[1360px] px-6 md:px-10">
         <div className="max-w-3xl">
-          <span className={`${mono} text-clay-deep mb-8 block`}>Studio Note</span>
+          <span className={`${mono} text-clay-deep mb-8 block`}>ABOUT</span>
           <p className="font-serif italic text-[22px] md:text-[32px] leading-[1.45] text-cocoa-deep/90">
             {site.about.note}
           </p>
