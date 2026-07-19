@@ -35,7 +35,7 @@ export type SiteContent = {
   work: { heading: string; italic: string; count: string };
   designProjects: SiteProject[];
   developmentProjects: SiteProject[];
-  services: { n: string; title: string; body: string }[];
+  services: { n: string; title: string; body: string; filter: "all" | "uiux" | "development" }[];
   about: {
     note: string;
   };
@@ -92,8 +92,9 @@ export const defaultSite: SiteContent = {
     { n: "VIII", name: "Davies", tagline: "An independent studio crafting bold brands and modern websites for founders.", year: "2024", discipline: "Portfolio · Web", location: "London", image: davies, link: "https://pixel-perfect-replica-0827.vercel.app/" },
   ],
   services: [
-    { n: "01", title: "UI/UX", body: "Research, wireframes and interfaces shaped around real user behavior." },
-    { n: "02", title: "Web Development", body: "Fast, modern, hand-built sites and products with clean architecture." },
+    { n: "00", title: "All", body: "The complete archive — every interface and build.", filter: "all" },
+    { n: "01", title: "UI/UX", body: "Research, wireframes and interfaces shaped around real user behavior.", filter: "uiux" },
+    { n: "02", title: "Web Development", body: "Fast, modern, hand-built sites and products with clean architecture.", filter: "development" },
   ],
   about: {
     note:

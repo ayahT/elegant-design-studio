@@ -101,9 +101,11 @@ function Hero({ site }: { site: SiteContent }) {
   );
 }
 
-function Work({ site }: { site: SiteContent }) {
+function Work({ site, filter }: { site: SiteContent; filter: "all" | "uiux" | "development" }) {
+  const showDesign = filter === "all" || filter === "uiux";
+  const showDev = filter === "all" || filter === "development";
   return (
-    <section id="work" className="py-20 md:py-32 border-t border-cocoa-deep/10">
+    <section id="work" className="py-20 md:pb-32 border-t border-cocoa-deep/10">
       <div className="mx-auto max-w-[1360px] px-6 md:px-10">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
           <h2 className="font-serif text-[32px] md:text-[48px] leading-[1.05] text-cocoa-deep">
@@ -111,8 +113,8 @@ function Work({ site }: { site: SiteContent }) {
           </h2>
           <span className={`${mono} text-cocoa/55`}>{site.work.count}</span>
         </div>
-        <WorkGroup label="Design" projects={site.designProjects} />
-        <WorkGroup label="Development" projects={site.developmentProjects} />
+        {showDesign && <WorkGroup label="Design" projects={site.designProjects} />}
+        {showDev && <WorkGroup label="Development" projects={site.developmentProjects} />}
       </div>
     </section>
   );
@@ -174,9 +176,9 @@ function ProjectCard({ project, group }: { project: Project; group: string }) {
   );
 }
 
-function Services({ site }: { site: SiteContent }) {
+function Services({ site, filter, setFilter }: { site: SiteContent; filter: "all" | "uiux" | "development"; setFilter: (f: "all" | "uiux" | "development") => void }) {
   return (
-    <section id="services" className="py-20 md:py-32 bg-ivory">
+    <section id="services" className="py-20 md:py-32 bg-ivory border-b border-cocoa-deep/10">
       <div className="mx-auto max-w-[1360px] px-6 md:px-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
           <div className="lg:col-span-4">
@@ -185,21 +187,31 @@ function Services({ site }: { site: SiteContent }) {
             </h2>
           </div>
           <div className="lg:col-span-8">
-            <ol className="flex flex-col divide-y divide-cocoa-deep/10">
-              {site.services.map((s) => (
-                <li key={s.title} className="group py-8 first:pt-0 last:pb-0 flex items-start gap-6">
-                  <span className={`${mono} text-cocoa/40 mt-2`}>{s.n}</span>
-                  <div className="flex-1">
-                    <h3 className="font-serif text-[24px] md:text-[30px] leading-[1.1] text-cocoa-deep mb-3">
-                      {s.title}
-                    </h3>
-                    <p className="text-[14px] leading-[1.75] text-cocoa/70 max-w-xl">
-                      {s.body}
-                    </p>
-                  </div>
-                  <ArrowUpRight className="h-4 w-4 text-cocoa/25 mt-3 transition-all group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-cocoa-deep" />
-                </li>
-              ))}
+            <ol className="flex flex-col divide-y divide-cocoa-deep/10" role="tablist" aria-label="Project filters">
+              {site.services.map((s) => {
+                const active = filter === s.filter;
+                return (
+                  <li key={s.title} className="group py-8 first:pt-0 last:pb-0">
+                    <button
+                      onClick={() => setFilter(s.filter)}
+                      role="tab"
+                      aria-selected={active}
+                      className={`w-full flex items-start gap-6 text-left transition-colors ${active ? "text-cocoa-deep" : "text-cocoa/70 hover:text-cocoa-deep"}`}
+                    >
+                      <span className={`${mono} mt-2 ${active ? "text-clay-deep" : "text-cocoa/40"}`}>{s.n}</span>
+                      <div className="flex-1">
+                        <h3 className="font-serif text-[24px] md:text-[30px] leading-[1.1] mb-3">
+                          {s.title}
+                        </h3>
+                        <p className={`text-[14px] leading-[1.75] max-w-xl ${active ? "text-cocoa/80" : "text-cocoa/60"}`}>
+                          {s.body}
+                        </p>
+                      </div>
+                      <ArrowUpRight className={`h-4 w-4 mt-3 transition-all ${active ? "text-cocoa-deep -translate-y-0.5 translate-x-0.5" : "text-cocoa/25 group-hover:text-cocoa-deep group-hover:-translate-y-0.5 group-hover:translate-x-0.5"}`} />
+                    </button>
+                  </li>
+                );
+              })}
             </ol>
           </div>
         </div>
@@ -355,6 +367,8 @@ function Home() {
   });
   const site: SiteContent = data?.value ? mergeContent(data.value) : defaultSite;
 
+  const [filter, setFilter] = useState<"all" | "uiux" | "development">("all");
+
   const [loaded, setLoaded] = useState(false);
   useEffect(() => {
     if (typeof window === "undefined") return;
@@ -390,8 +404,8 @@ function Home() {
         <Nav site={site} />
         <main>
           <Hero site={site} />
-          <Work site={site} />
-          <Services site={site} />
+          <Services site={site} filter={filter} setFilter={setFilter} />
+          <Work site={site} filter={filter} />
           <About site={site} />
           <Contact site={site} />
         </main>
