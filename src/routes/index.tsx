@@ -101,9 +101,11 @@ function Hero({ site }: { site: SiteContent }) {
   );
 }
 
-function Work({ site }: { site: SiteContent }) {
+function Work({ site, filter }: { site: SiteContent; filter: "all" | "uiux" | "development" }) {
+  const showDesign = filter === "all" || filter === "uiux";
+  const showDev = filter === "all" || filter === "development";
   return (
-    <section id="work" className="py-20 md:py-32 border-t border-cocoa-deep/10">
+    <section id="work" className="py-20 md:pb-32 border-t border-cocoa-deep/10">
       <div className="mx-auto max-w-[1360px] px-6 md:px-10">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
           <h2 className="font-serif text-[32px] md:text-[48px] leading-[1.05] text-cocoa-deep">
@@ -111,8 +113,8 @@ function Work({ site }: { site: SiteContent }) {
           </h2>
           <span className={`${mono} text-cocoa/55`}>{site.work.count}</span>
         </div>
-        <WorkGroup label="Design" projects={site.designProjects} />
-        <WorkGroup label="Development" projects={site.developmentProjects} />
+        {showDesign && <WorkGroup label="Design" projects={site.designProjects} />}
+        {showDev && <WorkGroup label="Development" projects={site.developmentProjects} />}
       </div>
     </section>
   );
