@@ -221,7 +221,7 @@ function Services({ site, filter, setFilter }: { site: SiteContent; filter: "all
                     <p className={`text-[13px] leading-[1.7] max-w-xs ${active ? "text-cocoa/80" : "text-cocoa/60"}`}>
                       {s.body}
                     </p>
-                    <ArrowUpRight className={`h-4 w-4 mt-4 transition-all ${active ? "text-cocoa-deep -translate-y-0.5 translate-x-0.5" : "text-cocoa/25 group-hover:text-cocoa-deep group-hover:-translate-y-0.5 group-hover:translate-x-0.5"}`} />
+                    <ArrowUpRight className={`h-6 w-6 mt-5 transition-all ${active ? "text-cocoa-deep -translate-y-0.5 translate-x-0.5" : "text-cocoa/25 group-hover:text-cocoa-deep group-hover:-translate-y-0.5 group-hover:translate-x-0.5"}`} />
                   </button>
                 </li>
               );
