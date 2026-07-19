@@ -107,9 +107,9 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         rel: "stylesheet",
         href: appCss,
       },
-      { rel: "icon", href: "/favicon-light.png?v=6", type: "image/png", media: "(prefers-color-scheme: light)" },
-      { rel: "icon", href: "/favicon-dark.png?v=6", type: "image/png", media: "(prefers-color-scheme: dark)" },
-      { rel: "shortcut icon", href: "/favicon.ico?v=6" },
+      { rel: "icon", href: "/favicon-light.png?v=8", type: "image/png", media: "(prefers-color-scheme: light)" },
+      { rel: "icon", href: "/favicon-dark.png?v=8", type: "image/png", media: "(prefers-color-scheme: dark)" },
+      { rel: "shortcut icon", href: "/favicon.ico?v=8" },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       {
         rel: "preconnect",
@@ -147,8 +147,37 @@ function RootComponent() {
 
   return (
     <QueryClientProvider client={queryClient}>
+      <FaviconSwitcher />
       {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
       <Outlet />
     </QueryClientProvider>
   );
+}
+
+function FaviconSwitcher() {
+  useEffect(() => {
+    const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
+
+    const updateFavicon = () => {
+      const href = mediaQuery.matches ? "/favicon-dark.png?v=8" : "/favicon-light.png?v=8";
+      let icon = document.querySelector<HTMLLinkElement>('link[data-dynamic-favicon="true"]');
+
+      if (!icon) {
+        icon = document.createElement("link");
+        icon.rel = "icon";
+        icon.type = "image/png";
+        icon.dataset.dynamicFavicon = "true";
+        document.head.appendChild(icon);
+      }
+
+      icon.href = href;
+    };
+
+    updateFavicon();
+    mediaQuery.addEventListener("change", updateFavicon);
+
+    return () => mediaQuery.removeEventListener("change", updateFavicon);
+  }, []);
+
+  return null;
 }
