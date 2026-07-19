@@ -77,10 +77,10 @@ function Hero({ site }: { site: SiteContent }) {
               {site.hero.description}
             </p>
             <div className="flex flex-wrap gap-4 pt-2">
-              <a href="#contact" className="px-7 py-3.5 bg-cocoa-deep text-ivory font-serif italic text-[15px] hover:opacity-90 transition-opacity">
-                {site.hero.ctaPrimary}
+              <a href="#contact" className="inline-flex items-center gap-2 border border-cocoa-deep/20 px-5 py-3 font-serif italic text-[14px] text-cocoa-deep hover:bg-ivory transition-colors">
+                {site.hero.ctaPrimary} <ArrowUpRight className="h-3.5 w-3.5" />
               </a>
-              <a href="#work" className="px-7 py-3.5 border border-cocoa-deep/20 font-serif italic text-[15px] text-cocoa-deep hover:bg-ivory transition-colors inline-flex items-center gap-2">
+              <a href="#work" className="inline-flex items-center gap-2 border border-cocoa-deep/20 px-5 py-3 font-serif italic text-[14px] text-cocoa-deep hover:bg-ivory transition-colors">
                 {site.hero.ctaSecondary} <ArrowUpRight className="h-3.5 w-3.5" />
               </a>
             </div>
@@ -200,7 +200,7 @@ function Services({ site, filter, setFilter }: { site: SiteContent; filter: "all
           <h2 className="font-serif text-[32px] md:text-[48px] leading-[1.05] text-cocoa-deep">
             Our Services
           </h2>
-          <ol className="flex flex-col md:flex-row md:items-stretch gap-6 md:gap-8 lg:gap-12" role="tablist" aria-label="Project filters">
+          <ol className="flex flex-col md:flex-row md:items-stretch gap-4 md:gap-6" role="tablist" aria-label="Project filters">
             {site.services.map((s) => {
               const active = filter === s.filter;
               return (
@@ -213,15 +213,13 @@ function Services({ site, filter, setFilter }: { site: SiteContent; filter: "all
                     }}
                     role="tab"
                     aria-selected={active}
-                    className={`w-full h-full flex flex-col items-start text-left transition-colors ${active ? "text-cocoa-deep" : "text-cocoa/70 hover:text-cocoa-deep"}`}
+                    className={`w-full h-full flex flex-col items-start text-left border px-5 py-4 transition-colors ${active ? "border-cocoa-deep/40 bg-ivory text-cocoa-deep" : "border-cocoa-deep/20 text-cocoa-deep hover:bg-ivory"}`}
                   >
-                    <div className="flex items-center gap-3 mb-3">
-                      <h3 className="font-serif text-[22px] md:text-[26px] leading-[1.1]">
-                        {s.title}
-                      </h3>
-                      <ArrowUpRight className={`h-6 w-6 transition-all ${active ? "text-cocoa-deep -translate-y-0.5 translate-x-0.5" : "text-cocoa/25 group-hover:text-cocoa-deep group-hover:-translate-y-0.5 group-hover:translate-x-0.5"}`} />
+                    <div className="flex items-center gap-3">
+                      <span className="font-serif italic text-[15px]">{s.title}</span>
+                      <ArrowUpRight className={`h-3.5 w-3.5 transition-all ${active ? "-translate-y-0.5 translate-x-0.5" : "text-cocoa/40 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"}`} />
                     </div>
-                    <p className={`text-[13px] leading-[1.7] max-w-xs ${active ? "text-cocoa/80" : "text-cocoa/60"}`}>
+                    <p className={`mt-3 text-[13px] leading-[1.7] max-w-xs ${active ? "text-cocoa/80" : "text-cocoa/60"}`}>
                       {s.body}
                     </p>
                   </button>
@@ -327,10 +325,10 @@ function Contact({ site }: { site: SiteContent }) {
             <button
               type="submit"
               disabled={state === "sending"}
-              className="inline-flex items-center justify-between px-6 py-4 bg-ivory text-cocoa-deep font-serif italic text-[15px] hover:opacity-90 transition-opacity disabled:opacity-60"
+              className="inline-flex items-center gap-2 self-start border border-ivory/20 px-5 py-3 font-serif italic text-[14px] text-ivory hover:bg-ivory/10 transition-colors disabled:opacity-60"
             >
               {state === "sending" ? "Sending…" : state === "sent" ? "Message sent — thank you" : state === "error" ? "Something went wrong — retry" : site.contact.submitLabel}
-              <ArrowUpRight className="h-4 w-4" />
+              <ArrowUpRight className="h-3.5 w-3.5" />
             </button>
           </form>
         </div>
