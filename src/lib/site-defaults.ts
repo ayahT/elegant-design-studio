@@ -39,7 +39,6 @@ export type SiteContent = {
   services: { n: string; title: string; body: string }[];
   about: {
     note: string;
-    ledger: { k: string; v: string }[];
   };
   contact: {
     heading: string;
@@ -100,13 +99,6 @@ export const defaultSite: SiteContent = {
   about: {
     note:
       "Named for the oldest builders — those who understood proportion, patience, and permanence. We take on a small number of projects each year so every one gets the depth it deserves. We aren't chasing trends. We're building work that still reads clearly in ten years.",
-    ledger: [
-      { k: "Stage", v: "Early Revenue" },
-      { k: "Practice", v: "UI/UX · Web" },
-      { k: "Founded", v: "2025 Alexandria" },
-      { k: "Selected", v: "8 projects" },
-      { k: "Availability", v: "all the time" },
-    ],
   },
   contact: {
     heading: "Let's build",

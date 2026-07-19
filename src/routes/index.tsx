@@ -240,32 +240,14 @@ function Services({ site }: { site: SiteContent }) {
 
 function About({ site }: { site: SiteContent }) {
   return (
-    <section id="about" className={`border-t ${bd} flex flex-col lg:flex-row`}>
-      <div className={`flex-1 p-8 md:p-14 border-b lg:border-b-0 lg:border-r ${bd}`}>
+    <section id="about" className={`border-t ${bd}`}>
+      <div className="max-w-4xl p-8 md:p-14">
         <h4 className={`${mono} text-cocoa-deep border-b ${bd} pb-3 mb-6 w-fit`}>Studio Note</h4>
-        <p className="font-serif italic text-[18px] md:text-[22px] leading-[1.55] text-cocoa-deep/85 max-w-xl">
+        <p className="font-serif italic text-[18px] md:text-[24px] leading-[1.55] text-cocoa-deep/85">
           {site.about.note}
         </p>
       </div>
-      <div className="lg:w-[420px] bg-ivory flex flex-col">
-        <table className={`w-full ${monoTiny} text-cocoa-deep flex-1 flex flex-col`}>
-          <tbody className="flex flex-col flex-1">
-            {site.about.ledger.map((r, i) => (
-              <LedgerRow key={r.k + i} k={r.k} v={r.v} last={i === site.about.ledger.length - 1} />
-            ))}
-          </tbody>
-        </table>
-      </div>
     </section>
-  );
-}
-
-function LedgerRow({ k, v, last }: { k: string; v: string; last?: boolean }) {
-  return (
-    <tr className={`flex flex-1 items-center ${last ? "" : `border-b ${bd}`}`}>
-      <td className={`p-4 font-bold bg-parchment/50 border-r ${bd} flex-1`}>{k}</td>
-      <td className="p-4 text-right flex-1">{v}</td>
-    </tr>
   );
 }
 
