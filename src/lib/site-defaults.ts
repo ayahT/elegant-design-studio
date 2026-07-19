@@ -35,7 +35,7 @@ export type SiteContent = {
   work: { heading: string; italic: string; count: string };
   designProjects: SiteProject[];
   developmentProjects: SiteProject[];
-  services: { n: string; title: string; body: string }[];
+  services: { n: string; title: string; body: string; filter: "all" | "uiux" | "development" }[];
   about: {
     note: string;
   };
