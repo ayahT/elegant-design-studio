@@ -107,7 +107,8 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         rel: "stylesheet",
         href: appCss,
       },
-      { rel: "icon", href: "/favicon.png", type: "image/png" },
+      { rel: "icon", href: "/favicon.png", type: "image/png", media: "(prefers-color-scheme: light)" },
+      { rel: "icon", href: "/favicon-dark.png", type: "image/png", media: "(prefers-color-scheme: dark)" },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       {
         rel: "preconnect",
