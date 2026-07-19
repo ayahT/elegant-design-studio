@@ -114,7 +114,7 @@ export const defaultSite: SiteContent = {
     email: "kemetwsr@gmail.com",
     submitLabel: "send a message",
     bookingUrl: "https://cal.com/kemetwsr-qc6vjw",
-    bookingLabel: "Book a 30-min call",
+    bookingLabel: "Book a call",
   },
   footer: {
     tagline: "Kemetwsr © 2026",
