@@ -107,7 +107,28 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         rel: "stylesheet",
         href: appCss,
       },
-      { rel: "icon", href: "/kemet-favicon-light-darkmark.png", type: "image/png" },
+      {
+        rel: "icon",
+        href: "/favicon-light-mode-dark-mark.png?v=7",
+        type: "image/png",
+      },
+      {
+        rel: "icon",
+        href: "/favicon-light-mode-dark-mark.png?v=7",
+        type: "image/png",
+        media: "(prefers-color-scheme: light)",
+      },
+      {
+        rel: "icon",
+        href: "/favicon-dark-mode-light-mark.png?v=7",
+        type: "image/png",
+        media: "(prefers-color-scheme: dark)",
+      },
+      {
+        rel: "shortcut icon",
+        href: "/favicon.ico?v=7",
+        type: "image/x-icon",
+      },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       {
         rel: "preconnect",
@@ -155,12 +176,13 @@ function RootComponent() {
 function FaviconSwitcher() {
   useEffect(() => {
     const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
+    const iconVersion = "v=7";
 
     const updateFavicon = () => {
       const base = mediaQuery.matches
-        ? "/kemet-favicon-dark-creammark.png"
-        : "/kemet-favicon-light-darkmark.png";
-      const href = `${base}?v=${Date.now()}`;
+        ? "/favicon-dark-mode-light-mark.png"
+        : "/favicon-light-mode-dark-mark.png";
+      const href = `${base}?${iconVersion}`;
 
       // Remove every existing icon link to avoid the browser holding onto a cached one.
       document
@@ -172,6 +194,12 @@ function FaviconSwitcher() {
       icon.type = "image/png";
       icon.href = href;
       document.head.appendChild(icon);
+
+      const shortcut = document.createElement("link");
+      shortcut.rel = "shortcut icon";
+      shortcut.type = "image/png";
+      shortcut.href = href;
+      document.head.appendChild(shortcut);
     };
 
     updateFavicon();
