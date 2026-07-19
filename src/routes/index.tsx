@@ -181,44 +181,38 @@ function Services({ site, filter, setFilter }: { site: SiteContent; filter: "all
   return (
     <section id="services" className="py-20 md:py-32 bg-ivory border-b border-cocoa-deep/10">
       <div className="mx-auto max-w-[1360px] px-6 md:px-10">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
-          <div className="lg:col-span-4">
-            <h2 className="font-serif text-[32px] md:text-[48px] leading-[1.05] text-cocoa-deep">
-              Our Services
-            </h2>
-          </div>
-          <div className="lg:col-span-8">
-            <ol className="flex flex-col divide-y divide-cocoa-deep/10" role="tablist" aria-label="Project filters">
-              {site.services.map((s) => {
-                const active = filter === s.filter;
-                return (
-                  <li key={s.title} className="group py-8 first:pt-0 last:pb-0">
-                    <button
-                      onClick={() => {
-                        setFilter(s.filter);
-                        const work = document.getElementById("work");
-                        if (work) work.scrollIntoView({ behavior: "smooth", block: "start" });
-                      }}
-                      role="tab"
-                      aria-selected={active}
-                      className={`w-full flex items-start gap-6 text-left transition-colors ${active ? "text-cocoa-deep" : "text-cocoa/70 hover:text-cocoa-deep"}`}
-                    >
-                      <span className={`${mono} mt-2 ${active ? "text-clay-deep" : "text-cocoa/40"}`}>{s.n}</span>
-                      <div className="flex-1">
-                        <h3 className="font-serif text-[24px] md:text-[30px] leading-[1.1] mb-3">
-                          {s.title}
-                        </h3>
-                        <p className={`text-[14px] leading-[1.75] max-w-xl ${active ? "text-cocoa/80" : "text-cocoa/60"}`}>
-                          {s.body}
-                        </p>
-                      </div>
-                      <ArrowUpRight className={`h-4 w-4 mt-3 transition-all ${active ? "text-cocoa-deep -translate-y-0.5 translate-x-0.5" : "text-cocoa/25 group-hover:text-cocoa-deep group-hover:-translate-y-0.5 group-hover:translate-x-0.5"}`} />
-                    </button>
-                  </li>
-                );
-              })}
-            </ol>
-          </div>
+        <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-10 lg:gap-16">
+          <h2 className="font-serif text-[32px] md:text-[48px] leading-[1.05] text-cocoa-deep shrink-0">
+            Our Services
+          </h2>
+          <ol className="flex flex-col md:flex-row md:items-stretch gap-6 md:gap-8 lg:gap-12" role="tablist" aria-label="Project filters">
+            {site.services.map((s) => {
+              const active = filter === s.filter;
+              return (
+                <li key={s.title} className="group flex-1">
+                  <button
+                    onClick={() => {
+                      setFilter(s.filter);
+                      const work = document.getElementById("work");
+                      if (work) work.scrollIntoView({ behavior: "smooth", block: "start" });
+                    }}
+                    role="tab"
+                    aria-selected={active}
+                    className={`w-full h-full flex flex-col items-start text-left transition-colors ${active ? "text-cocoa-deep" : "text-cocoa/70 hover:text-cocoa-deep"}`}
+                  >
+                    <span className={`${mono} mb-4 ${active ? "text-clay-deep" : "text-cocoa/40"}`}>{s.n}</span>
+                    <h3 className="font-serif text-[22px] md:text-[26px] leading-[1.1] mb-3">
+                      {s.title}
+                    </h3>
+                    <p className={`text-[13px] leading-[1.7] max-w-xs ${active ? "text-cocoa/80" : "text-cocoa/60"}`}>
+                      {s.body}
+                    </p>
+                    <ArrowUpRight className={`h-4 w-4 mt-4 transition-all ${active ? "text-cocoa-deep -translate-y-0.5 translate-x-0.5" : "text-cocoa/25 group-hover:text-cocoa-deep group-hover:-translate-y-0.5 group-hover:translate-x-0.5"}`} />
+                  </button>
+                </li>
+              );
+            })}
+          </ol>
         </div>
       </div>
     </section>
