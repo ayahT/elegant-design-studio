@@ -1,4 +1,4 @@
-import { createFileRoute, useNavigate } from "@tanstack/react-router";
+import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
 import { useEffect, useState, type FormEvent } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { ArrowUpRight, Instagram, Linkedin, Mail, Menu, X } from "lucide-react";
@@ -348,7 +348,9 @@ function Footer({ site }: { site: SiteContent }) {
           <img src={site.brand.logoUrl} alt="" className="h-5 w-5 object-contain" />
           <span className="font-serif italic text-[15px]">{site.brand.name}</span>
         </div>
-        <span className={`${mono} text-cocoa/50 text-center`}>{site.footer.tagline}</span>
+        <Link to="/" className={`${mono} text-cocoa/50 hover:text-cocoa-deep transition-colors text-center`}>
+          {site.footer.tagline}
+        </Link>
         <div className="flex items-center gap-5">
           <a href={site.footer.instagramUrl} target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="text-cocoa/60 hover:text-cocoa-deep transition-colors">
             <Instagram size={18} strokeWidth={1.5} />
