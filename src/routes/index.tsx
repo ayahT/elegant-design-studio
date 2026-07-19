@@ -385,7 +385,7 @@ function Home() {
     });
     const t = setTimeout(() => setLoaded(true), 10000);
     return () => clearTimeout(t);
-  }, [site, filter]);
+  }, [site]);
 
   return (
     <>
