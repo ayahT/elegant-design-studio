@@ -157,8 +157,8 @@ function WorkGroup({ label, projects }: { label: string; projects: Project[] }) 
   );
 }
 
-function ProjectCard({ project, group }: { project: Project; group: string }) {
-  const ctaLabel = group === "Development" ? "View website" : "View case";
+function ProjectCard({ project }: { project: Project }) {
+  const ctaLabel = "CaseStudy";
   return (
     <a
       href={project.link || "#contact"}
