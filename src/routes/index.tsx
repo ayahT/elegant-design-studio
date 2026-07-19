@@ -177,7 +177,7 @@ function ProjectCard({ project, ctaLabel }: { project: Project; ctaLabel: string
       <div className="flex flex-col gap-3">
         <div className="flex items-center justify-between">
           <span className={`${mono} text-cocoa/50`}>{project.year} · {project.discipline} · {project.location}</span>
-          <span className="inline-flex items-center gap-1.5 font-serif italic text-[14px] text-cocoa-deep group-hover:text-clay-deep transition-colors">
+          <span className="inline-flex items-center gap-2 border border-cocoa-deep/20 px-4 py-2 font-serif italic text-[13px] text-cocoa-deep group-hover:bg-ivory transition-colors">
             {ctaLabel} <ArrowUpRight className="h-3.5 w-3.5" />
           </span>
         </div>
