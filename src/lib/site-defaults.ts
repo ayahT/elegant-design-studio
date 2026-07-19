@@ -72,8 +72,8 @@ export const defaultSite: SiteContent = {
     ctaPrimary: "Contact us",
     ctaSecondary: "View Selected Work",
     featuredLabel: "",
-    featuredImageUrl: "",
-    featuredAlt: "",
+    featuredImageUrl: aiChat,
+    featuredAlt: "Ancient Egypt AI assistant interface",
   },
   work: {
     heading: "Eight finished projects",
