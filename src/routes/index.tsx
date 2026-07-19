@@ -8,6 +8,12 @@ import { getContent, submitMessage } from "@/lib/content.functions";
 import { defaultSite, mergeContent, type SiteContent, type SiteProject } from "@/lib/site-defaults";
 
 export const Route = createFileRoute("/")({
+  loader: async ({ context }) => {
+    await context.queryClient.prefetchQuery({
+      queryKey: ["site-content"],
+      queryFn: () => getContent(),
+    });
+  },
   component: Home,
 });
 
