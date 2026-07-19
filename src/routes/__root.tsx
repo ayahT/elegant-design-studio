@@ -107,9 +107,10 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         rel: "stylesheet",
         href: appCss,
       },
-      { rel: "icon", href: "/favicon-light.png?v=8", type: "image/png", media: "(prefers-color-scheme: light)" },
-      { rel: "icon", href: "/favicon-dark.png?v=8", type: "image/png", media: "(prefers-color-scheme: dark)" },
-      { rel: "shortcut icon", href: "/favicon.ico?v=8" },
+      { rel: "icon", href: "/kemet-favicon-light-darkmark.png", type: "image/png" },
+      { rel: "icon", href: "/kemet-favicon-light-darkmark.png", type: "image/png", media: "(prefers-color-scheme: light)" },
+      { rel: "icon", href: "/kemet-favicon-dark-creammark.png", type: "image/png", media: "(prefers-color-scheme: dark)" },
+      { rel: "shortcut icon", href: "/kemet-favicon-darkmark.ico" },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       {
         rel: "preconnect",
@@ -159,7 +160,15 @@ function FaviconSwitcher() {
     const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
 
     const updateFavicon = () => {
-      const href = mediaQuery.matches ? "/favicon-dark.png?v=8" : "/favicon-light.png?v=8";
+      const href = mediaQuery.matches
+        ? "/kemet-favicon-dark-creammark.png"
+        : "/kemet-favicon-light-darkmark.png";
+      const existingIcons = document.querySelectorAll<HTMLLinkElement>('link[rel~="icon"]');
+
+      existingIcons.forEach((existingIcon) => {
+        existingIcon.href = href;
+      });
+
       let icon = document.querySelector<HTMLLinkElement>('link[data-dynamic-favicon="true"]');
 
       if (!icon) {
