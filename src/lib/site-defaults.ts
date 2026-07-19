@@ -60,7 +60,7 @@ export type SiteContent = {
 export const defaultSite: SiteContent = {
   brand: { name: "Kemet Wsr", short: "A2E", logoUrl: logo },
   hero: {
-    eyebrow: "Independent Design Studio",
+    eyebrow: "",
     headline: "We build the future of your online presence.",
     description:
       "Kemet Wsr is a small studio for founders who want their identity and product to feel considered, permanent, and unmistakably theirs.",
