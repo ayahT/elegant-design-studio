@@ -450,6 +450,7 @@ function Home() {
       </div>
       <div className="min-h-screen bg-parchment text-cocoa-deep">
         <Nav site={site} />
+        <BackToTop />
         <main>
           <Hero site={site} />
           <Services site={site} filter={filter} setFilter={setFilter} />
