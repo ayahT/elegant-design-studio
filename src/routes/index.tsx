@@ -239,7 +239,7 @@ function About({ site }: { site: SiteContent }) {
       <div className="mx-auto max-w-[1360px] px-6 md:px-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
           <div className="lg:col-span-8">
-            <h2 className="font-serif text-[32px] md:text-[48px] leading-[1.05] text-cocoa-deep mb-8">ABOUT</h2>
+            <h2 className="font-serif text-[32px] md:text-[48px] leading-[1.05] text-cocoa-deep mb-8">About</h2>
             <p className="font-serif italic text-[22px] md:text-[32px] leading-[1.45] text-cocoa-deep/90">
               {site.about.note}
             </p>
