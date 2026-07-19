@@ -367,6 +367,8 @@ function Home() {
   });
   const site: SiteContent = data?.value ? mergeContent(data.value) : defaultSite;
 
+  const [filter, setFilter] = useState<"all" | "uiux" | "development">("all");
+
   const [loaded, setLoaded] = useState(false);
   useEffect(() => {
     if (typeof window === "undefined") return;
@@ -383,7 +385,7 @@ function Home() {
     });
     const t = setTimeout(() => setLoaded(true), 10000);
     return () => clearTimeout(t);
-  }, [site]);
+  }, [site, filter]);
 
   return (
     <>
@@ -402,8 +404,8 @@ function Home() {
         <Nav site={site} />
         <main>
           <Hero site={site} />
-          <Work site={site} />
-          <Services site={site} />
+          <Services site={site} filter={filter} setFilter={setFilter} />
+          <Work site={site} filter={filter} />
           <About site={site} />
           <Contact site={site} />
         </main>
