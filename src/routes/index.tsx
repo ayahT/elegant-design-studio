@@ -215,13 +215,15 @@ function Services({ site, filter, setFilter }: { site: SiteContent; filter: "all
                     aria-selected={active}
                     className={`w-full h-full flex flex-col items-start text-left transition-colors ${active ? "text-cocoa-deep" : "text-cocoa/70 hover:text-cocoa-deep"}`}
                   >
-                    <h3 className="font-serif text-[22px] md:text-[26px] leading-[1.1] mb-3">
-                      {s.title}
-                    </h3>
+                    <div className="flex items-center gap-3 mb-3">
+                      <h3 className="font-serif text-[22px] md:text-[26px] leading-[1.1]">
+                        {s.title}
+                      </h3>
+                      <ArrowUpRight className={`h-6 w-6 transition-all ${active ? "text-cocoa-deep -translate-y-0.5 translate-x-0.5" : "text-cocoa/25 group-hover:text-cocoa-deep group-hover:-translate-y-0.5 group-hover:translate-x-0.5"}`} />
+                    </div>
                     <p className={`text-[13px] leading-[1.7] max-w-xs ${active ? "text-cocoa/80" : "text-cocoa/60"}`}>
                       {s.body}
                     </p>
-                    <ArrowUpRight className={`h-6 w-6 mt-5 transition-all ${active ? "text-cocoa-deep -translate-y-0.5 translate-x-0.5" : "text-cocoa/25 group-hover:text-cocoa-deep group-hover:-translate-y-0.5 group-hover:translate-x-0.5"}`} />
                   </button>
                 </li>
               );
