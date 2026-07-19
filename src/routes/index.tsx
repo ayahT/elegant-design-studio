@@ -77,7 +77,7 @@ function Hero({ site }: { site: SiteContent }) {
               {site.hero.description}
             </p>
           </div>
-          <div className="lg:col-span-5">
+          <div className="lg:col-span-5 flex flex-col gap-10">
             {site.hero.featuredImageUrl && (
               <div className="relative overflow-hidden rounded-sm bg-ivory">
                 <img
@@ -87,24 +87,22 @@ function Hero({ site }: { site: SiteContent }) {
                 />
               </div>
             )}
-          </div>
-        </div>
-        <div className="mt-16 md:mt-24 flex flex-col md:flex-row md:items-end justify-between gap-10">
-          <div className="flex flex-wrap gap-x-8 gap-y-3">
-            {site.hero.specs.map((s) => (
-              <div key={s.label} className="flex flex-col gap-1">
-                <span className={`${mono} text-cocoa/50`}>{s.label}</span>
-                <span className="font-serif italic text-[17px] text-cocoa-deep">{s.value}</span>
-              </div>
-            ))}
-          </div>
-          <div className="flex flex-wrap gap-4">
-            <a href="#contact" className="px-7 py-3.5 bg-cocoa-deep text-ivory font-serif italic text-[15px] hover:opacity-90 transition-opacity">
-              {site.hero.ctaPrimary}
-            </a>
-            <a href="#work" className="px-7 py-3.5 border border-cocoa-deep/20 font-serif italic text-[15px] text-cocoa-deep hover:bg-ivory transition-colors inline-flex items-center gap-2">
-              {site.hero.ctaSecondary} <ArrowUpRight className="h-3.5 w-3.5" />
-            </a>
+            <div className="flex flex-wrap gap-x-8 gap-y-3">
+              {site.hero.specs.map((s) => (
+                <div key={s.label} className="flex flex-col gap-1">
+                  <span className={`${mono} text-cocoa/50`}>{s.label}</span>
+                  <span className="font-serif italic text-[17px] text-cocoa-deep">{s.value}</span>
+                </div>
+              ))}
+            </div>
+            <div className="flex flex-wrap gap-4 pt-2">
+              <a href="#contact" className="px-7 py-3.5 bg-cocoa-deep text-ivory font-serif italic text-[15px] hover:opacity-90 transition-opacity">
+                {site.hero.ctaPrimary}
+              </a>
+              <a href="#work" className="px-7 py-3.5 border border-cocoa-deep/20 font-serif italic text-[15px] text-cocoa-deep hover:bg-ivory transition-colors inline-flex items-center gap-2">
+                {site.hero.ctaSecondary} <ArrowUpRight className="h-3.5 w-3.5" />
+              </a>
+            </div>
           </div>
         </div>
       </div>
