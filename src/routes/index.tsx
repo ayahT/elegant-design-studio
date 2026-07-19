@@ -139,31 +139,26 @@ function WorkGroup({ label, projects }: { label: string; projects: Project[] }) 
 function ProjectCard({ project, group }: { project: Project; group: string }) {
   const ctaLabel = group === "Development" ? "View website" : "View case";
   return (
-    <article className="group flex flex-col gap-6">
-      <a
-        href={project.link || "#contact"}
-        target={project.link ? "_blank" : undefined}
-        rel={project.link ? "noopener noreferrer" : undefined}
-        className="relative bg-ivory rounded-sm overflow-hidden aspect-[4/3] flex items-center justify-center p-8 md:p-12"
-      >
+    <a
+      href={project.link || "#contact"}
+      target={project.link ? "_blank" : undefined}
+      rel={project.link ? "noopener noreferrer" : undefined}
+      className="group flex flex-col gap-6"
+    >
+      <div className="relative bg-ivory rounded-sm overflow-hidden aspect-[4/3] flex items-center justify-center p-8 md:p-12">
         <img
           src={project.image}
           alt={project.name}
           loading="lazy"
           className="max-h-full max-w-full object-contain transition-transform duration-1000 ease-out group-hover:scale-[1.03]"
         />
-      </a>
+      </div>
       <div className="flex flex-col gap-3">
         <div className="flex items-center justify-between">
           <span className={`${mono} text-cocoa/50`}>{project.year} · {project.discipline}</span>
-          <a
-            href={project.link || "#contact"}
-            target={project.link ? "_blank" : undefined}
-            rel={project.link ? "noopener noreferrer" : undefined}
-            className="inline-flex items-center gap-1.5 font-serif italic text-[14px] text-cocoa-deep hover:text-clay-deep transition-colors"
-          >
+          <span className="inline-flex items-center gap-1.5 font-serif italic text-[14px] text-cocoa-deep group-hover:text-clay-deep transition-colors">
             {ctaLabel} <ArrowUpRight className="h-3.5 w-3.5" />
-          </a>
+          </span>
         </div>
         <h3 className="font-serif text-[26px] md:text-[32px] leading-[1.05] text-cocoa-deep">
           {project.name}
@@ -172,7 +167,7 @@ function ProjectCard({ project, group }: { project: Project; group: string }) {
           {project.tagline}
         </p>
       </div>
-    </article>
+    </a>
   );
 }
 
