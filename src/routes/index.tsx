@@ -88,9 +88,6 @@ function Hero({ site }: { site: SiteContent }) {
           <div className="lg:col-span-5 flex flex-col gap-6">
             {site.hero.featuredImageUrl && (
               <div className="flex flex-col gap-5">
-                <span className={`${mono} text-cocoa/60 text-[13px]`}>
-                  Featured — Ancient Egypt AI
-                </span>
                 <div className="overflow-hidden rounded-sm bg-ivory p-5 md:p-8">
                   <img
                     src={site.hero.featuredImageUrl}
@@ -98,6 +95,9 @@ function Hero({ site }: { site: SiteContent }) {
                     className="w-full h-auto object-cover"
                   />
                 </div>
+                <span className={`${mono} text-cocoa/60 text-[13px]`}>
+                  Featured — Ancient Egypt AI
+                </span>
                 <div className="flex items-start justify-between gap-4">
                   <span className="flex flex-col gap-1">
                     <span className={`${mono} text-cocoa-deep text-[13px]`}>Interface</span>
