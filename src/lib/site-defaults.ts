@@ -79,7 +79,7 @@ export const defaultSite: SiteContent = {
   work: {
     heading: "Eight finished projects",
     italic: "since the beginning of 2026.",
-    count: "8 projects",
+    count: "",
   },
   designProjects: [
     { n: "I", name: "Ataa Platform", tagline: "A specialized platform for providing Adhiyah (sacrificial) services inside and outside Egypt, with multiple safe options tailored to users' needs.", year: "2024", discipline: "Platform · Web", location: "Cairo", image: ataa, link: "https://www.behance.net/gallery/247841697/_" },
