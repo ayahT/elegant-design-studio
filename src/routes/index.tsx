@@ -88,6 +88,17 @@ function Hero({ site }: { site: SiteContent }) {
           <div className="lg:col-span-5 flex flex-col gap-10">
             {site.hero.featuredImageUrl && (
               <div className="relative overflow-hidden rounded-sm bg-ivory">
+                <span className={`absolute left-5 top-5 z-10 ${mono} text-cocoa/60`}>
+                  Featured — Ancient Egypt AI
+                </span>
+                <span className="absolute left-5 bottom-5 z-10 flex flex-col gap-1">
+                  <span className={`${mono} text-cocoa-deep`}>Interface</span>
+                  <span className={`${mono} text-cocoa/50`}>Chat · History</span>
+                </span>
+                <span className="absolute right-5 top-1/2 -translate-y-1/2 z-10 flex flex-col gap-1 text-right">
+                  <span className={`${mono} text-cocoa-deep`}>Product</span>
+                  <span className={`${mono} text-cocoa/50`}>Mobile · AI</span>
+                </span>
                 <img
                   src={site.hero.featuredImageUrl}
                   alt={site.hero.featuredAlt}
