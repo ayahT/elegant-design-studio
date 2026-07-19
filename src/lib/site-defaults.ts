@@ -1,5 +1,4 @@
 import logo from "@/assets/logo-mark.png";
-import aiChat from "@/assets/ai-chat.png";
 import lamborghini from "@/assets/proj-1.png";
 import cowboy from "@/assets/proj-2.png";
 import nexo from "@/assets/nexo-new.png";
