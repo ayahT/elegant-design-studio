@@ -108,9 +108,6 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         href: appCss,
       },
       { rel: "icon", href: "/kemet-favicon-light-darkmark.png", type: "image/png" },
-      { rel: "icon", href: "/kemet-favicon-light-darkmark.png", type: "image/png", media: "(prefers-color-scheme: light)" },
-      { rel: "icon", href: "/kemet-favicon-dark-creammark.png", type: "image/png", media: "(prefers-color-scheme: dark)" },
-      { rel: "shortcut icon", href: "/kemet-favicon-darkmark.ico" },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       {
         rel: "preconnect",
