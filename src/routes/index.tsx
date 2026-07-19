@@ -1,7 +1,7 @@
 import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
 import { useEffect, useState, type FormEvent } from "react";
 import { useQuery } from "@tanstack/react-query";
-import { ArrowUpRight, Instagram, Linkedin, Mail, Menu, X } from "lucide-react";
+import { ArrowUp, ArrowUpRight, Instagram, Linkedin, Mail, Menu, X } from "lucide-react";
 import { useServerFn } from "@tanstack/react-start";
 
 import { getContent, submitMessage } from "@/lib/content.functions";
@@ -379,6 +379,26 @@ function Footer({ site }: { site: SiteContent }) {
   );
 }
 
+function BackToTop() {
+  const [visible, setVisible] = useState(false);
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    const onScroll = () => setVisible(window.scrollY > 320);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+  return (
+    <button
+      onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+      aria-label="Back to top"
+      className={`fixed left-5 top-1/2 -translate-y-1/2 z-40 flex h-10 w-10 items-center justify-center rounded-full border border-cocoa-deep/10 bg-parchment/90 text-cocoa-deep shadow-sm backdrop-blur-sm transition-all duration-300 hover:border-cocoa-deep/30 hover:bg-ivory ${visible ? "translate-x-0 opacity-100" : "-translate-x-16 opacity-0 pointer-events-none"}`}
+    >
+      <ArrowUp className="h-4 w-4" strokeWidth={1.5} />
+    </button>
+  );
+}
+
 function Home() {
   const navigate = useNavigate();
   useEffect(() => {
@@ -430,6 +450,7 @@ function Home() {
       </div>
       <div className="min-h-screen bg-parchment text-cocoa-deep">
         <Nav site={site} />
+        <BackToTop />
         <main>
           <Hero site={site} />
           <Services site={site} filter={filter} setFilter={setFilter} />
