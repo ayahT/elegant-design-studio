@@ -1,4 +1,5 @@
 import logo from "@/assets/logo-mark.png";
+import aiChat from "@/assets/ai-chat.png";
 import lamborghini from "@/assets/proj-1.png";
 import cowboy from "@/assets/proj-2.png";
 import nexo from "@/assets/nexo-new.png";
@@ -71,8 +72,8 @@ export const defaultSite: SiteContent = {
     ctaPrimary: "Contact us",
     ctaSecondary: "View Selected Work",
     featuredLabel: "",
-    featuredImageUrl: "",
-    featuredAlt: "",
+    featuredImageUrl: aiChat,
+    featuredAlt: "Ancient Egypt AI assistant interface",
   },
   work: {
     heading: "Eight finished projects",

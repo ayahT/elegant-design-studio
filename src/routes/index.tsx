@@ -67,17 +67,26 @@ function Hero({ site }: { site: SiteContent }) {
   return (
     <section id="top" className="pt-32 md:pt-44 pb-20 md:pb-32">
       <div className="mx-auto max-w-[1360px] px-6 md:px-10">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
           <div className="lg:col-span-7 flex flex-col gap-8">
             <span className={`${mono} text-clay-deep`}>{site.hero.eyebrow}</span>
             <h1 className="font-serif text-[40px] md:text-[64px] lg:text-[76px] leading-[0.98] tracking-[-0.02em] text-cocoa-deep">
               {site.hero.headline}
             </h1>
-          </div>
-          <div className="lg:col-span-5 flex flex-col gap-10 lg:pt-16">
-            <p className="text-[15px] md:text-[16px] leading-[1.8] text-cocoa/80 max-w-md">
+            <p className="text-[15px] md:text-[16px] leading-[1.8] text-cocoa/80 max-w-xl">
               {site.hero.description}
             </p>
+          </div>
+          <div className="lg:col-span-5 flex flex-col gap-10">
+            {site.hero.featuredImageUrl && (
+              <div className="relative overflow-hidden rounded-sm bg-ivory">
+                <img
+                  src={site.hero.featuredImageUrl}
+                  alt={site.hero.featuredAlt}
+                  className="w-full h-auto object-cover"
+                />
+              </div>
+            )}
             <div className="flex flex-wrap gap-x-8 gap-y-3">
               {site.hero.specs.map((s) => (
                 <div key={s.label} className="flex flex-col gap-1">
@@ -87,10 +96,10 @@ function Hero({ site }: { site: SiteContent }) {
               ))}
             </div>
             <div className="flex flex-wrap gap-4 pt-2">
-              <a href="#work" className="px-7 py-3.5 bg-cocoa-deep text-ivory font-serif italic text-[15px] hover:opacity-90 transition-opacity">
+              <a href="#contact" className="px-7 py-3.5 bg-cocoa-deep text-ivory font-serif italic text-[15px] hover:opacity-90 transition-opacity">
                 {site.hero.ctaPrimary}
               </a>
-              <a href="#contact" className="px-7 py-3.5 border border-cocoa-deep/20 font-serif italic text-[15px] text-cocoa-deep hover:bg-ivory transition-colors inline-flex items-center gap-2">
+              <a href="#work" className="px-7 py-3.5 border border-cocoa-deep/20 font-serif italic text-[15px] text-cocoa-deep hover:bg-ivory transition-colors inline-flex items-center gap-2">
                 {site.hero.ctaSecondary} <ArrowUpRight className="h-3.5 w-3.5" />
               </a>
             </div>
