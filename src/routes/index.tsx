@@ -77,10 +77,10 @@ function Hero({ site }: { site: SiteContent }) {
               {site.hero.description}
             </p>
             <div className="flex flex-wrap gap-4 pt-2">
-              <a href="#contact" className="inline-flex items-center gap-2 border border-cocoa-deep/20 px-5 py-3 font-serif italic text-[14px] text-cocoa-deep hover:bg-ivory transition-colors">
+              <a href="#contact" className="inline-flex items-center gap-2 border border-cocoa-deep bg-cocoa-deep px-5 py-3 font-serif italic text-[14px] text-ivory hover:bg-transparent hover:text-cocoa-deep transition-colors">
                 {site.hero.ctaPrimary} <ArrowUpRight className="h-3.5 w-3.5" />
               </a>
-              <a href="#work" className="inline-flex items-center gap-2 border border-cocoa-deep bg-cocoa-deep px-5 py-3 font-serif italic text-[14px] text-ivory hover:bg-transparent hover:text-cocoa-deep transition-colors">
+              <a href="#work" className="inline-flex items-center gap-2 border border-cocoa-deep px-5 py-3 font-serif italic text-[14px] text-cocoa-deep hover:bg-cocoa-deep hover:text-ivory transition-colors">
                 {site.hero.ctaSecondary} <ArrowUpRight className="h-3.5 w-3.5" />
               </a>
             </div>
