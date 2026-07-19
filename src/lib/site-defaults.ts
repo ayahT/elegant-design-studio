@@ -83,7 +83,7 @@ export const defaultSite: SiteContent = {
   designProjects: [
     { n: "I", name: "Ataa Platform", tagline: "A specialized platform for providing Adhiyah (sacrificial) services inside and outside Egypt, with multiple safe options tailored to users' needs.", year: "2024", discipline: "Platform · Web", location: "Cairo", image: ataa, link: "https://www.behance.net/gallery/247841697/_" },
     { n: "II", name: "MOVO App", tagline: "A halal restaurant app designed to help Muslim communities living abroad easily find trusted, certified Islamic food.", year: "2024", discipline: "Product · Mobile", location: "London", image: movo, link: "https://www.behance.net/gallery/248654627/MOVO-App" },
-    { n: "III", name: "Zadna", tagline: "A halal restaurant app designed to help Muslim communities living abroad easily find trusted, certified Islamic food.", year: "2024", discipline: "Product · Mobile", location: "Global", image: zadna, link: "https://www.behance.net/gallery/243174961/ZADNA" },
+    { n: "III", name: "Zadna", tagline: "A halal restaurant app designed to help Muslim communities living abroad easily find trusted, certified Islamic food.", year: "2024", discipline: "Product · Mobile", location: "Germany", image: zadna, link: "https://www.behance.net/gallery/243174961/ZADNA" },
   ],
   developmentProjects: [
     { n: "IV", name: "Lamborghini Fenomeno", tagline: "Launch site for a limited-edition 820 hp hybrid V12 hypercar, handcrafted in Sant'Agata.", year: "2025", discipline: "Brand · Web", location: "Sant'Agata Bolognese", image: lamborghini, link: "https://object-forge-zone.vercel.app/" },
